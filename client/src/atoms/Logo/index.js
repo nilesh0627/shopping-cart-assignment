@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-
-const LogoStyles = styled.h1`
-  font-size: 2.5rem;
-  flex: 1.5;
+import Image from "../image";
+const LogoStyles = styled.figure`
+  flex: 1.2;
+  img {
+    max-width: 14rem;
+  }
 `;
 function index() {
   return (
     <LogoStyles>
-      <div>SABKA</div>
-      <div>BAZAR</div>
+      <Image source="/static/images/logo.png" alt="SABKA BAZAR LOGO" />
     </LogoStyles>
   );
 }
