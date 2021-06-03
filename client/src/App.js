@@ -27,6 +27,33 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: var(---black);
   }
+
+
+  .shadow{
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 6px -6px rgba(0,0,0,0.2);
+  }
+
+  .fade-shadow{
+    width: 100%;
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0rem;
+    background: radial-gradient(
+      farthest-corner at 50% 0px,
+      gray 0%,
+      transparent 50%
+    );
+    width: 100%;
+    height: 1rem;
+    z-index: -5;
+  }
+  }
+
 `;
 function App() {
   return (

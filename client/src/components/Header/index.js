@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 function index() {
   return (
-    <HeaderStyles>
+    <HeaderStyles className="shadow">
       <div className="container">
         <Logo />
         <nav>

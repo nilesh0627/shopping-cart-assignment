@@ -28,7 +28,11 @@ function Carousel({ getBanners, bannersData }) {
         key={banner.id}
         className={activeIndex === index ? "fade-in" : "hide"}
       >
-        <Image source={banner.bannerImageUrl} alt={banner.bannerImageAlt} />
+        <Image
+          className="slide"
+          source={banner.bannerImageUrl}
+          alt={banner.bannerImageAlt}
+        />
       </section>
     );
   });
@@ -36,15 +40,17 @@ function Carousel({ getBanners, bannersData }) {
   const dots = banners?.data?.map((banner, index) => {
     return (
       <BsDot
+        key={banner.id}
         onClick={() => goToIndex(index)}
         color={activeIndex === index ? "black" : "lightgray"}
+        size={26}
       />
     );
   });
 
   return (
-    <CarouselStyles>
-      <section class="container">
+    <CarouselStyles className="fade-shadow">
+      <section className="container">
         <button className="prev" onClick={() => prev(1)}>
           Prev
         </button>

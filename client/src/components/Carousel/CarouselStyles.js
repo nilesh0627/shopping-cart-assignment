@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 export const CarouselStyles = styled.section`
   margin-top: 1rem;
   .container {
@@ -11,9 +10,6 @@ export const CarouselStyles = styled.section`
     display: none;
   }
   .fade-in {
-    -webkit-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
     animation: fadeIn ease 3s;
     -webkit-animation: fadeIn ease 3s;
     -moz-animation: fadeIn ease 3s;
@@ -65,15 +61,17 @@ export const CarouselStyles = styled.section`
     }
   }
 
-  /* .prev {
+  .prev {
     position: relative;
     left: 4rem;
+    z-index: 100;
   }
 
   .next {
     position: relative;
     right: 4rem;
-  } */
+    z-index: 100;
+  }
 
   button {
     background-color: var(--black);
@@ -94,5 +92,9 @@ export const CarouselStyles = styled.section`
 
   .dots > * {
     cursor: pointer;
+  }
+
+  .slide {
+    width: 100%;
   }
 `;

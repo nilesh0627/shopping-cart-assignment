@@ -1,12 +1,13 @@
 import React from "react";
 
-function index({ source, alt }) {
+function index({ className, source, alt }) {
+  const src = source ? source : "/static/images/category/beverages.png";
   return (
     <img
+      className={className}
       loading="lazy"
-      src={process.env.PUBLIC_URL + source}
+      src={process.env.PUBLIC_URL + src}
       alt={alt}
-      width="100%"
       height="auto"
     />
   );
