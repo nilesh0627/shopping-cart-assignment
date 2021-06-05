@@ -1,10 +1,10 @@
 import React from "react";
-import Layout from "../../Layout";
+import MainLayout from "../../templates/MainLayout";
 function index() {
   return (
-    <Layout>
+    <MainLayout>
       <h1>Products List Page</h1>
-    </Layout>
+    </MainLayout>
   );
 }
 

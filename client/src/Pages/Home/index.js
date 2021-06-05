@@ -1,13 +1,13 @@
 import React from "react";
-import Layout from "../../Layout";
-import Carousel from "../../components/Carousel";
-import Categories from "../../components/Categories";
+import MainLayout from "../../templates/MainLayout";
+import Carousel from "../../organisms/Banners";
+import Categories from "../../organisms/Categories";
 function index() {
   return (
-    <Layout>
+    <MainLayout>
       <Carousel />
       <Categories />
-    </Layout>
+    </MainLayout>
   );
 }
 

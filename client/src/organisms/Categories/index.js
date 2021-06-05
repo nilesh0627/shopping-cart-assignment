@@ -2,10 +2,16 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { getCategories } from "../../redux/actions/categoriesAction";
-import Category from "./Category";
+import CategoryCard from "../../molecules/CategoryCard";
 const CategoriesStyles = styled.main`
   display: grid;
   gap: 1rem;
+
+  .fade-shadow:last-child {
+    &::after {
+      background: none;
+    }
+  }
 `;
 function Categories({ categories, getCategories }) {
   useEffect(() => {
@@ -15,12 +21,14 @@ function Categories({ categories, getCategories }) {
   useEffect(() => {
     console.log(categories);
   }, [categories]);
+
   return (
     <CategoriesStyles>
       {categories?.data?.map((category, index) => (
-        <Category
+        <CategoryCard
           key={category.key}
           name={category.name}
+          explore={category.key}
           description={category.description}
           imageUrl={category.imageUrl}
           orderType={index % 2}

@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "../Pages/Home";
-import Cart from "../Pages/Cart";
-import ProductsList from "../Pages/ProductsList";
-import Login from "../Pages/Login";
-import Register from "../Pages/Register";
+import Home from "../pages/Home";
+import Cart from "../pages/Cart";
+import ProductsList from "../pages/ProductsList";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 function Routes() {
   return (
     <BrowserRouter>

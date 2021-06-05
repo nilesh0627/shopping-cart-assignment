@@ -1,10 +1,11 @@
 import React from "react";
-import Layout from "../../Layout";
+import MainLayout from "../../templates/MainLayout";
+import Login from "../../organisms/Login";
 function index() {
   return (
-    <Layout>
-      <h1>Login Page</h1>
-    </Layout>
+    <MainLayout>
+      <Login />
+    </MainLayout>
   );
 }
 

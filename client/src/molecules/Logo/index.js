@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "../image";
+import Image from "../../atoms/image";
+import { Link } from "react-router-dom";
 const LogoStyles = styled.figure`
   flex: 1.2;
   img {
@@ -10,7 +11,9 @@ const LogoStyles = styled.figure`
 function index() {
   return (
     <LogoStyles>
-      <Image source="/static/images/logo.png" alt="SABKA BAZAR LOGO" />
+      <Link to="/">
+        <Image source="/static/images/logo.png" alt="SABKA BAZAR LOGO" />
+      </Link>
     </LogoStyles>
   );
 }

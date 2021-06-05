@@ -1,10 +1,9 @@
 import React, { useState, useEffect, memo } from "react";
-import { connect } from "react-redux";
 import { BsDot } from "react-icons/bs";
 import { getBanners } from "../../redux/actions";
 import Image from "../../atoms/image";
 import { CarouselStyles } from "./CarouselStyles";
-function Carousel({ getBanners, bannersData }) {
+function Carousel({ bannersData }) {
   const { banners, error, loading } = bannersData;
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
@@ -32,6 +31,7 @@ function Carousel({ getBanners, bannersData }) {
           className="slide"
           source={banner.bannerImageUrl}
           alt={banner.bannerImageAlt}
+          loading={loading}
         />
       </section>
     );
@@ -64,14 +64,4 @@ function Carousel({ getBanners, bannersData }) {
   );
 }
 
-function mapStateToProps({ bannersData }) {
-  return {
-    bannersData,
-  };
-}
-
-const mapDispatchToProps = {
-  getBanners: getBanners,
-};
-
-export default memo(connect(mapStateToProps, mapDispatchToProps)(Carousel));
+export default memo(Carousel);

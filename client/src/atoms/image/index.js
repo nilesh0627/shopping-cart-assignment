@@ -2,6 +2,7 @@ import React from "react";
 
 function index({ className, source, alt }) {
   const src = source ? source : "/static/images/category/beverages.png";
+
   return (
     <img
       className={className}

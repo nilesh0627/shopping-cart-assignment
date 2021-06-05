@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../atoms/Logo";
+import Logo from "../../molecules/Logo";
 import { HeaderStyles } from "./HeaderStyles";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";

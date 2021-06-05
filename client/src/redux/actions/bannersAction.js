@@ -17,20 +17,20 @@ export function getBanners() {
   };
 }
 
-export function getBannersRequest() {
+function getBannersRequest() {
   return {
     type: GET_BANNERS_REQUEST,
   };
 }
 
-export function getBannersSuccess(bannerData) {
+function getBannersSuccess(bannerData) {
   return {
     type: GET_BANNERS_SUCCESS,
     payload: bannerData,
   };
 }
 
-export function getBannersFail() {
+function getBannersFail() {
   return {
     type: GET_BANNERS_FAIL,
   };

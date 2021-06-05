@@ -75,7 +75,7 @@ export const CarouselStyles = styled.section`
 
   button {
     background-color: var(--black);
-    color: #fff;
+    color: var(--white);
     opacity: 0.5;
     padding: 0.3rem 0.5rem;
     outline: none;
