@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useEffect, memo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { getCategories } from "../../redux/actions/categoriesAction";
 import CategoryCard from "../../molecules/CategoryCard";
@@ -13,10 +13,14 @@ const CategoriesStyles = styled.main`
     }
   }
 `;
-function Categories({ categories, getCategories }) {
+function Categories() {
+  const dispatch = useDispatch();
+  const { loading, error, categories } = useSelector(
+    ({ categoriesData }) => categoriesData
+  );
   useEffect(() => {
-    getCategories();
-  }, []);
+    dispatch(getCategories());
+  }, [dispatch]);
 
   useEffect(() => {
     console.log(categories);
@@ -38,17 +42,4 @@ function Categories({ categories, getCategories }) {
   );
 }
 
-function mapStateToProps({ categoriesData }) {
-  const { loading, error, categories } = categoriesData;
-  return {
-    loading,
-    error,
-    categories,
-  };
-}
-
-const mapDispatchToProps = {
-  getCategories: getCategories,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default memo(Categories);

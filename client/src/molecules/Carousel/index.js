@@ -1,14 +1,11 @@
-import React, { useState, useEffect, memo } from "react";
+import React, { useState, memo } from "react";
 import { BsDot } from "react-icons/bs";
-import { getBanners } from "../../redux/actions";
 import Image from "../../atoms/image";
 import { CarouselStyles } from "./CarouselStyles";
+
 function Carousel({ bannersData }) {
   const { banners, error, loading } = bannersData;
   const [activeIndex, setActiveIndex] = useState(0);
-  useEffect(() => {
-    getBanners();
-  }, []);
   const next = (increment) =>
     setActiveIndex(
       (activeIndex) => (activeIndex + increment) % banners.data.length
