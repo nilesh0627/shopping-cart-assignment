@@ -44,7 +44,7 @@ function Input({ type, name, value, placeholder, handleChange }) {
         required
         autoComplete="off"
       />
-      <label for={name}>{placeholder}</label>
+      <label htmlFor={name}>{placeholder}</label>
     </FieldSet>
   );
 }

@@ -6,6 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     --black:#202626;
     --olive:#9DAC54;
     --light-gray:#E8E9E8;
+    --dark-gray:#586074;
     --blue:#00ead3;
     --white:#fff;
     --gray:#afb9c8;
@@ -16,11 +17,16 @@ export const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   body{
     font-family: "dosis";
     font-size: 1.5rem;
-    margin: 0;
-    padding: 0;
   }
   a{
     text-decoration: none;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "../organisms/Header";
 import Footer from "../organisms/Footer";
-const LayoutStyles = styled.div`
+const LayoutStyles = styled.main`
   max-width: var(--max-width);
   margin: 0 auto;
 `;
