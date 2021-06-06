@@ -31,6 +31,13 @@ export const HeaderStyles = styled.header`
       align-items: center;
       background-color: var(--light-gray);
       padding: 1rem;
+      padding-bottom: 1.5rem;
+      cursor: pointer;
+
+      div {
+        width: 6rem;
+        padding-left: 1rem;
+      }
     }
   }
 `;

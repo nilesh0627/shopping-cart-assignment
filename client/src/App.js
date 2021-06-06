@@ -1,10 +1,10 @@
-import Routes from "./routes/Routes";
 import { GlobalStyles } from "./styles/GlobalStyles";
+import MainLayout from "./templates/MainLayout";
 function App() {
   return (
     <div className="App">
       <GlobalStyles />
-      <Routes />
+      <MainLayout />
     </div>
   );
 }

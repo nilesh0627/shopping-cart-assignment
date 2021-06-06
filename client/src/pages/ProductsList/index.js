@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import MainLayout from "../../templates/MainLayout";
 import Products from "../../organisms/Products";
 import CategoriesNames from "../../organisms/CategoriesNames";
 import styled from "styled-components";
@@ -44,7 +43,7 @@ function ProductsList() {
     }
   }, [currentCategory]);
   return (
-    <MainLayout>
+    <>
       <ProductsLayout>
         <CategoriesNames
           currentCategory={currentCategory}
@@ -52,7 +51,7 @@ function ProductsList() {
         />
         <Products products={filteredProducts} />
       </ProductsLayout>
-    </MainLayout>
+    </>
   );
 }
 

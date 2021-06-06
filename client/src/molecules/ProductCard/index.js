@@ -1,10 +1,14 @@
-import React from "react";
+import React, { memo } from "react";
+import { useDispatch } from "react-redux";
 import Button from "../../atoms/Button";
-
 import { ImageStyled, ArticleStyled, BuyStyled } from "./StyledProductCard";
-
-const index = ({ product }) => {
+import { addToCart } from "../../redux/actions";
+const ProductCard = ({ product }) => {
   const { name, imageURL, description, price } = product;
+  const dispatch = useDispatch();
+  const buyNow = () => {
+    dispatch(addToCart(product, "INCREMENT"));
+  };
   return (
     <ArticleStyled>
       <strong>{name}</strong>
@@ -14,10 +18,10 @@ const index = ({ product }) => {
       </summary>
       <BuyStyled>
         <p>MRP Rs. {price}</p>
-        <Button>Buy Now</Button>
+        <Button handleClick={buyNow}>Buy Now</Button>
       </BuyStyled>
     </ArticleStyled>
   );
 };
 
-export default index;
+export default memo(ProductCard);

@@ -1,11 +1,7 @@
 import React from "react";
-import MainLayout from "../../templates/MainLayout";
-function index() {
-  return (
-    <MainLayout>
-      <h1>Cart Page</h1>
-    </MainLayout>
-  );
+import CartItems from "../../organisms/CartItems";
+function Cart({ isOpen, setIsOpen }) {
+  return <CartItems isOpen={isOpen} setIsOpen={setIsOpen} />;
 }
 
-export default index;
+export default Cart;
