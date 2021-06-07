@@ -2,7 +2,6 @@ import React, { useEffect, memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SideBarStyled, ListItem } from "./StyledCategories";
 import { getCategories } from "../../redux/actions";
-
 const CategoriesNames = ({ currentCategory, setCurrentCategory }) => {
   const dispatch = useDispatch();
   useEffect(() => {

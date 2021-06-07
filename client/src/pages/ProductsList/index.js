@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Products from "../../organisms/Products";
 import CategoriesNames from "../../organisms/CategoriesNames";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/actions";
-
+import { withRouter } from "react-router-dom";
+import { filter } from "../../utils/filter";
 const ProductsLayout = styled.section`
   display: grid;
   grid-template-columns: 1.2fr 4fr;
   gap: 2rem;
 `;
 
-function ProductsList() {
-  const [filteredProducts, setFilteredProducts] = useState({});
-  const [currentCategory, setCurrentCategory] = useState("");
+function ProductsList({ location }) {
+  const [currentCategory, setCurrentCategory] = useState(
+    location?.state?.category
+  );
   const dispatch = useDispatch();
   const {
     loading,
@@ -21,27 +23,45 @@ function ProductsList() {
     error,
   } = useSelector(({ productsData }) => productsData);
 
+  const [filteredProducts, setFilteredProducts] = useState(allProducts);
   useEffect(() => {
     dispatch(productsAction());
   }, [dispatch]);
 
+  // useEffect(() => {
+  //   if (location?.state?.category) {
+  //     const newCategory = location.state.category;
+  //     setCurrentCategory(newCategory);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    setFilteredProducts(allProducts);
+    if (allProducts) {
+      if (location.state?.category) {
+        const filterdProductsList = filter(allProducts?.data, currentCategory);
+        setFilteredProducts((products) => ({
+          ...products,
+          data: filterdProductsList,
+        }));
+      } else {
+        setFilteredProducts(allProducts);
+      }
+    }
   }, [allProducts]);
 
   useEffect(() => {
-    if (!currentCategory) setFilteredProducts(allProducts);
-    else {
-      const filterdProductsList = allProducts.data?.filter(
-        (item) => item.category === currentCategory
-      );
-
-      setFilteredProducts((products) => ({
-        ...products,
-        data: filterdProductsList,
-      }));
+    if (allProducts["data"]) {
+      if (!currentCategory) setFilteredProducts(allProducts);
+      else {
+        const filterdProductsList = filter(allProducts?.data, currentCategory);
+        setFilteredProducts((products) => ({
+          ...products,
+          data: filterdProductsList,
+        }));
+      }
     }
   }, [currentCategory]);
+  console.log(filteredProducts);
   return (
     <>
       <ProductsLayout>
@@ -54,5 +74,4 @@ function ProductsList() {
     </>
   );
 }
-
-export default ProductsList;
+export default withRouter(ProductsList);

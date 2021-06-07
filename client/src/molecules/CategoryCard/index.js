@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Image from "../../atoms/image";
 import Button from "../../atoms/Button";
 import { CategoryStyles } from "./CardStyles";
-function Category({ explore, name, description, imageUrl, orderType }) {
+function Category({ explore, id, name, description, imageUrl, orderType }) {
   return (
     <CategoryStyles className="fade-shadow" orderType={orderType}>
       <Image className="categoryImage" source={imageUrl} alt={name} />
@@ -10,7 +11,14 @@ function Category({ explore, name, description, imageUrl, orderType }) {
       <article className="categoryDetail">
         <strong className="p-2">{name}</strong>
         <summary className="p-2">{description}</summary>
-        <Button type="button">{`Explore ${explore}`}</Button>
+        <Link
+          to={{
+            pathname: "/products",
+            state: { category: id },
+          }}
+        >
+          <Button type="button">{`Explore ${explore}`}</Button>
+        </Link>
       </article>
     </CategoryStyles>
   );

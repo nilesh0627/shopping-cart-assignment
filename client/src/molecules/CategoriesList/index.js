@@ -7,7 +7,8 @@ function CategoriesList({ categories }) {
     <CategoriesStyles>
       {categories?.data?.map((category, index) => (
         <CategoryCard
-          key={category.key}
+          key={category.id}
+          id={category.id}
           name={category.name}
           explore={category.key}
           description={category.description}
