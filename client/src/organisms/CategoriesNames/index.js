@@ -2,8 +2,10 @@ import React, { useEffect, memo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SideBarStyled, ListItem } from "./StyledCategories";
 import { getCategories } from "../../redux/actions";
+import { useHistory } from "react-router";
 const CategoriesNames = ({ currentCategory, setCurrentCategory }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   useEffect(() => {
     if (!categories.length) dispatch(getCategories());
   }, [dispatch]);
@@ -13,8 +15,13 @@ const CategoriesNames = ({ currentCategory, setCurrentCategory }) => {
   );
 
   const setProductsCategory = (category) => {
-    if (category === currentCategory) setCurrentCategory("");
-    else setCurrentCategory(category);
+    if (category === currentCategory) {
+      setCurrentCategory("");
+      history.push("/products");
+    } else {
+      setCurrentCategory(category);
+      history.push(`/products/${category}`);
+    }
   };
 
   return (

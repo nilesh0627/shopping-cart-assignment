@@ -11,12 +11,7 @@ function Category({ explore, id, name, description, imageUrl, orderType }) {
       <article className="categoryDetail">
         <strong className="p-2">{name}</strong>
         <summary className="p-2">{description}</summary>
-        <Link
-          to={{
-            pathname: "/products",
-            state: { category: id },
-          }}
-        >
+        <Link to={`/products/${id}`}>
           <Button type="button">{`Explore ${explore}`}</Button>
         </Link>
       </article>

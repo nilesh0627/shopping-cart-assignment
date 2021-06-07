@@ -4,7 +4,7 @@ import CategoriesNames from "../../organisms/CategoriesNames";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/actions";
-import { withRouter } from "react-router-dom";
+import { withRouter, useParams } from "react-router-dom";
 import { filter } from "../../utils/filter";
 const ProductsLayout = styled.section`
   display: grid;
@@ -12,10 +12,9 @@ const ProductsLayout = styled.section`
   gap: 2rem;
 `;
 
-function ProductsList({ location }) {
-  const [currentCategory, setCurrentCategory] = useState(
-    location?.state?.category
-  );
+function ProductsList() {
+  const { id } = useParams();
+  const [currentCategory, setCurrentCategory] = useState(id);
   const dispatch = useDispatch();
   const {
     loading,
@@ -28,16 +27,9 @@ function ProductsList({ location }) {
     dispatch(productsAction());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   if (location?.state?.category) {
-  //     const newCategory = location.state.category;
-  //     setCurrentCategory(newCategory);
-  //   }
-  // }, []);
-
   useEffect(() => {
     if (allProducts) {
-      if (location.state?.category) {
+      if (id) {
         const filterdProductsList = filter(allProducts?.data, currentCategory);
         setFilteredProducts((products) => ({
           ...products,
@@ -61,7 +53,6 @@ function ProductsList({ location }) {
       }
     }
   }, [currentCategory]);
-  console.log(filteredProducts);
   return (
     <>
       <ProductsLayout>
