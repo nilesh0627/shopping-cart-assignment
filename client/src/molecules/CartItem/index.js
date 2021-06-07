@@ -6,21 +6,22 @@ import { addToCart } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 const StyledGrid = styled.section`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   background-color: var(--white);
   padding: 1rem;
   gap: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const StyledCartImag = styled(Image)`
   grid-column: 1/2;
   grid-row: 1/-1;
-  width: 100%;
+  width: 75%;
 `;
 
 const StyledArticle = styled.article`
-  grid-column: 2/5;
+  grid-column: 2/4;
   grid-row: 1/-1;
   display: grid;
 
@@ -39,7 +40,7 @@ const StyledArticle = styled.article`
 
 const StyledPrice = styled.article`
   grid-row: 2/-1;
-  grid-column: 5/-1;
+  grid-column: 4/-1;
 `;
 const CartItem = ({ cartItem }) => {
   const { name, imageURL, quantity, price } = cartItem;

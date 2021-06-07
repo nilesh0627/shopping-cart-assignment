@@ -1,42 +1,25 @@
 import React from "react";
-import styled from "styled-components";
-import Modal from "../../atoms/Modal";
+import Button from "../../atoms/Button";
 import CartItem from "../CartItem";
-const Close = styled.span`
-  color: var(--light-gray);
-  text-align: right;
-  font-size: 3.8rem;
-
-  :hover,
-  :focus {
-    color: var(--primary-color);
-    text-decoration: none;
-    cursor: pointer;
-  }
-`;
-
-const StyledHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--black);
-  padding: 0 1.4rem;
-  div {
-    color: var(--white);
-  }
-`;
-
-const StyledBody = styled.main`
-  background-color: var(--light-gray);
-  display: grid;
-  gap: 2rem;
-  padding-top: 2rem;
-`;
-
-const StyledModal = styled(Modal)`
-  /* height: 75rem; */
-`;
+import { EmptyBody, EmptyFooter } from "../CartEmpty";
+import { useHistory } from "react-router-dom";
+import { reduce } from "../../utils/reduce";
+import {
+  Close,
+  StyledBody,
+  StyledModal,
+  StyledFooter,
+  StyledHeader,
+} from "./StyledCart";
 function CartItems({ isOpen, setIsOpen, cart }) {
+  const history = useHistory();
+
+  const amount = reduce(cart, 0);
+
+  const checkout = () => {
+    history.push("/");
+    setIsOpen(false);
+  };
   return (
     <StyledModal isOpen={isOpen} setIsOpen={setIsOpen}>
       <StyledHeader>
@@ -53,7 +36,19 @@ function CartItems({ isOpen, setIsOpen, cart }) {
           ))}
         </StyledBody>
       ) : (
-        <h3>No Items in your Cart</h3>
+        <EmptyBody />
+      )}
+
+      {cart.length ? (
+        <StyledFooter>
+          <div>Promo code can be applied on payment page</div>
+          <Button handleClick={checkout}>
+            <div>Proceed To checkout</div>
+            <div>Rs. {amount}</div>
+          </Button>
+        </StyledFooter>
+      ) : (
+        <EmptyFooter setIsOpen={setIsOpen} />
       )}
     </StyledModal>
   );

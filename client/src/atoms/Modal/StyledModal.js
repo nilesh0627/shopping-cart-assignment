@@ -3,20 +3,20 @@ const Modal = styled.div`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: fixed;
   z-index: 1;
-  padding-top: 10rem;
+  padding-top: 3rem;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  overflow-y: ${({ isOpen }) => (isOpen ? "hidden" : "auto")};
+  background-color: rgba(0, 0, 0, 0.7);
 `;
 
 const ModalContent = styled.div`
   background-color: var(--white);
   color: var(--black);
   margin: auto;
-  width: 35%;
+  width: 32%;
 `;
 
 export { Modal, ModalContent };
