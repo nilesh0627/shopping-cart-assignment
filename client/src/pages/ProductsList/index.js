@@ -4,7 +4,7 @@ import CategoriesNames from "../../organisms/CategoriesNames";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/actions";
-import { withRouter, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { filter } from "../../utils/filter";
 const ProductsLayout = styled.section`
   display: grid;
@@ -34,30 +34,19 @@ function ProductsList() {
 
   useEffect(() => {
     if (allProducts) {
-      if (id) {
+      if (currentCategory) {
         const filterdProductsList = filter(allProducts?.data, currentCategory);
         setFilteredProducts((products) => ({
           ...products,
           data: filterdProductsList,
         }));
+      } else if (!currentCategory) {
+        setFilteredProducts(allProducts);
       } else {
         setFilteredProducts(allProducts);
       }
     }
-  }, [allProducts]);
-
-  useEffect(() => {
-    if (allProducts["data"]) {
-      if (!currentCategory) setFilteredProducts(allProducts);
-      else {
-        const filterdProductsList = filter(allProducts?.data, currentCategory);
-        setFilteredProducts((products) => ({
-          ...products,
-          data: filterdProductsList,
-        }));
-      }
-    }
-  }, [currentCategory]);
+  }, [allProducts, currentCategory]);
   return (
     <>
       <ProductsLayout>
@@ -70,4 +59,4 @@ function ProductsList() {
     </>
   );
 }
-export default withRouter(ProductsList);
+export default memo(ProductsList);
