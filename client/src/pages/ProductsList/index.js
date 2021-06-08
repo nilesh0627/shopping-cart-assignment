@@ -28,6 +28,11 @@ function ProductsList() {
   }, [dispatch]);
 
   useEffect(() => {
+    console.log(id);
+    setCurrentCategory(id);
+  }, [id]);
+
+  useEffect(() => {
     if (allProducts) {
       if (id) {
         const filterdProductsList = filter(allProducts?.data, currentCategory);
