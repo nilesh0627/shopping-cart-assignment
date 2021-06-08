@@ -1,16 +1,11 @@
 import React, { memo, useEffect, useState } from "react";
 import Products from "../../organisms/Products";
 import CategoriesNames from "../../organisms/CategoriesNames";
-import styled from "styled-components";
+import { ProductsLayout } from "./ProductsLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { productsAction } from "../../redux/actions";
 import { useParams } from "react-router-dom";
 import { filter } from "../../utils/filter";
-const ProductsLayout = styled.section`
-  display: grid;
-  grid-template-columns: 1.2fr 4fr;
-  gap: 2rem;
-`;
 
 function ProductsList() {
   const { id } = useParams();

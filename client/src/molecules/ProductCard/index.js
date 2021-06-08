@@ -12,10 +12,13 @@ const ProductCard = ({ product }) => {
   return (
     <ArticleStyled>
       <strong>{name}</strong>
-      <ImageStyled source={imageURL} alt={name} />
-      <summary>
-        <p>{description}</p>
-      </summary>
+      <figure>
+        <ImageStyled source={imageURL} alt={name} />
+        <summary>
+          <p>{description}</p>
+        </summary>
+      </figure>
+
       <BuyStyled>
         <p>MRP Rs. {price}</p>
         <Button handleClick={buyNow}>Buy Now</Button>

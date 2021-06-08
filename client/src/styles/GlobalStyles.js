@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
-
+import { createGlobalStyle } from "styled-components";
+import { mobile, tablet } from "./device";
 export const GlobalStyles = createGlobalStyle`
   html{
     --primary-color:#B93153;
@@ -11,9 +11,21 @@ export const GlobalStyles = createGlobalStyle`
     --white:#fff;
     --gray:#afb9c8;
     --red:red;
-    --max-width:1000px;
+    --max-width:1024px;
     font-size: 62.5%;
     box-sizing: border-box;
+  }
+
+  @media ${tablet}{
+    html{
+      --max-width:100%;
+    }
+  }
+
+  @media ${mobile}{
+    html{
+      --max-width:100%;
+    }
   }
   *, *:before, *:after {
     box-sizing: inherit;
