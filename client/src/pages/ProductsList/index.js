@@ -40,8 +40,6 @@ function ProductsList() {
           ...products,
           data: filterdProductsList,
         }));
-      } else if (!currentCategory) {
-        setFilteredProducts(allProducts);
       } else {
         setFilteredProducts(allProducts);
       }
