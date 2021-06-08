@@ -20,7 +20,7 @@ function Login() {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm({ mode: "onChange" });
+  } = useForm({ mode: "onSubmit" });
   const history = useHistory();
 
   const onSubmit = () => {
@@ -36,9 +36,10 @@ function Login() {
           type="email"
           name="email"
           register={register}
-          validation={emailValidation}
           placeholder="Email"
+          validation={emailValidation}
         />
+
         {errors.email && (
           <ErrorMessage
             field="Email"
@@ -47,25 +48,29 @@ function Login() {
             maxLength={emailValidation.maxLength}
           />
         )}
+
         <Input
           type="password"
           name="password"
           register={register}
-          validation={passwordValidation}
           placeholder="Password"
         />
-        {errors.password && (
-          <ErrorMessage
-            field="Password"
-            type={errors.password.type}
-            minLength={passwordValidation.minLength}
-            maxLength={passwordValidation.maxLength}
-          />
-        )}
-        <LoginButton type="submit">Login</LoginButton>
+
+        <LoginButton handleClick={handleSubmit(onSubmit)}>Login</LoginButton>
       </form>
     </AuthenticationLayout>
   );
 }
 
 export default Login;
+
+// {
+//   errors.password && (
+//     <ErrorMessage
+//       field="Password"
+//       type={errors.password.type}
+//       minLength={passwordValidation.minLength}
+//       maxLength={passwordValidation.maxLength}
+//     />
+//   );
+// }

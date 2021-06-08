@@ -22,13 +22,16 @@ function Register() {
     handleSubmit,
     formState: { errors },
     register,
-  } = useForm({ mode: "onChange" });
+    watch,
+  } = useForm({ mode: "onSubmit" });
   const history = useHistory();
-
+  const password = watch("password");
   const onSubmit = (data) => {
     console.log(data);
     history.push("/");
   };
+  const validate = (value) =>
+    value === password || "Confirm Password does not match";
   return (
     <AuthenticationLayout
       title="Signup"
@@ -97,8 +100,11 @@ function Register() {
           type="password"
           name="confirmPassword"
           register={register}
+          validate={validate}
+          // {...register("confirmPassword", {
+          //   validate: validate,
+          // })}
           placeholder="Confirm Password"
-          validation={passwordValidation}
         />
         {errors.confirmPassword && (
           <ErrorMessage
@@ -106,10 +112,11 @@ function Register() {
             type={errors.confirmPassword.type}
             minLength={passwordValidation.minLength}
             maxLength={passwordValidation.maxLength}
+            message={errors.confirmPassword.message}
           />
         )}
 
-        <SignupButton>Signup</SignupButton>
+        <SignupButton type="submit">Signup</SignupButton>
       </form>
     </AuthenticationLayout>
   );

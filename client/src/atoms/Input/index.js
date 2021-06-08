@@ -37,7 +37,7 @@ const FieldSet = styled.fieldset`
     display: block;
   } */
 `;
-function Input({ type, name, register, validation, placeholder }) {
+function Input({ type, name, validate, register, validation, placeholder }) {
   const [show, setShow] = useState(false);
   const showLabel = () => setShow(true);
   const hideLabel = () => setShow(false);
@@ -47,7 +47,7 @@ function Input({ type, name, register, validation, placeholder }) {
       <input
         type={type}
         id={name}
-        {...register(name, validation)}
+        {...register(name, { ...validation, validate: validate })}
         placeholder={placeholder}
         onFocus={showLabel}
         onBlur={hideLabel}

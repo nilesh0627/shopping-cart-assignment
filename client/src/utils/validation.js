@@ -13,6 +13,7 @@ const emailValidation = {
 const passwordValidation = {
   required: true,
   minLength: 6,
+  pattern: /^(?=.*\d)(?=.*[a-zA-Z]).{6,}$/,
 };
 
 export { nameValidation, emailValidation, passwordValidation };
