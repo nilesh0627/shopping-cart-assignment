@@ -1,18 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 
 const FieldSet = styled.fieldset`
-  margin-top: 1rem;
+  margin-top: 3rem;
   border: none;
   font-size: 1.3rem;
+
   label {
-    display: block;
-    visibility: hidden;
-    position: relative;
-    bottom: 5.5rem;
-    color: var(--blue);
-    font-weight: 500;
+    display: none;
   }
+
+  ${({ show }) =>
+    show &&
+    css`
+      label {
+        display: block;
+        color: var(--blue);
+        font-weight: 500;
+      }
+      input:focus {
+        border-bottom: 2px solid var(--blue);
+      }
+    `}
+
   input {
     display: block;
     width: 100%;
@@ -22,29 +32,27 @@ const FieldSet = styled.fieldset`
     padding: 1rem 0;
   }
 
-  input:focus {
-    border-bottom: 2px solid var(--blue);
-  }
-
-  input:focus + label,
-  input:valid + label {
-    visibility: visible;
-  }
+  /* label + input:focus +,
+  label + input:valid {
+    display: block;
+  } */
 `;
-function Input({ type, name, value, placeholder, handleChange }) {
+function Input({ type, name, register, validation, placeholder }) {
+  const [show, setShow] = useState(false);
+  const showLabel = () => setShow(true);
+  const hideLabel = () => setShow(false);
   return (
-    <FieldSet>
+    <FieldSet show={show}>
+      <label htmlFor={name}>{placeholder}</label>
       <input
         type={type}
-        name={name}
         id={name}
-        value={value}
+        {...register(name, validation)}
         placeholder={placeholder}
-        onChange={handleChange}
-        required
+        onFocus={showLabel}
+        onBlur={hideLabel}
         autoComplete="off"
       />
-      <label htmlFor={name}>{placeholder}</label>
     </FieldSet>
   );
 }

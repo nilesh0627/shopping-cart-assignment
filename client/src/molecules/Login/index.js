@@ -3,38 +3,65 @@ import styled from "styled-components";
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import AuthenticationLayout from "../../templates/AuthenticationLayout";
-import { useForm } from "../../utils/useForm";
+import ErrorMessage from "../../atoms/ErrorMessage";
+import { emailValidation, passwordValidation } from "../../utils/validation";
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 const LoginButton = styled(Button)`
   display: block;
   width: 100%;
   margin-top: 2.3rem;
 `;
 
+const StyledForm = styled.form``;
+
 function Login() {
-  const { inputs, handleChange } = useForm({
-    email: "",
-    password: "",
-  });
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({ mode: "onChange" });
+  const history = useHistory();
+
+  const onSubmit = () => {
+    history.push("/");
+  };
   return (
     <AuthenticationLayout
       title="Login"
       summary="Get Access to your Orders,Wishlist and Recommendations"
     >
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="email"
           name="email"
-          value={inputs["email"]}
+          register={register}
+          validation={emailValidation}
           placeholder="Email"
-          handleChange={handleChange}
         />
+        {errors.email && (
+          <ErrorMessage
+            field="Email"
+            type={errors.email.type}
+            minLength={emailValidation.minLength}
+            maxLength={emailValidation.maxLength}
+          />
+        )}
         <Input
           type="password"
           name="password"
-          value={inputs["password"]}
+          register={register}
+          validation={passwordValidation}
           placeholder="Password"
-          handleChange={handleChange}
         />
+        {errors.password && (
+          <ErrorMessage
+            field="Password"
+            type={errors.password.type}
+            minLength={passwordValidation.minLength}
+            maxLength={passwordValidation.maxLength}
+          />
+        )}
         <LoginButton type="submit">Login</LoginButton>
       </form>
     </AuthenticationLayout>

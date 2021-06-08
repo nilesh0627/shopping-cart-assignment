@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     --blue:#00ead3;
     --white:#fff;
     --gray:#afb9c8;
+    --red:red;
     --max-width:1000px;
     font-size: 62.5%;
     box-sizing: border-box;

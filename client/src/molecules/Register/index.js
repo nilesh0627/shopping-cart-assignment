@@ -1,9 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import AuthenticationLayout from "../../templates/AuthenticationLayout";
+import ErrorMessage from "../../atoms/ErrorMessage";
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
-import { useForm } from "../../utils/useForm";
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
+import {
+  nameValidation,
+  emailValidation,
+  passwordValidation,
+} from "../../utils/validation";
 const SignupButton = styled(Button)`
   display: block;
   width: 100%;
@@ -11,56 +18,98 @@ const SignupButton = styled(Button)`
 `;
 
 function Register() {
-  const { inputs, handleChange } = useForm({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const {
+    handleSubmit,
+    formState: { errors },
+    register,
+  } = useForm({ mode: "onChange" });
+  const history = useHistory();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    history.push("/");
+  };
   return (
     <AuthenticationLayout
       title="Signup"
       summary="We don't share your personal details with anyone"
     >
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           type="text"
           name="firstName"
-          value={inputs["firstName"]}
+          register={register}
           placeholder="First Name"
-          handleChange={handleChange}
+          validation={nameValidation}
         />
+        {errors.firstName && (
+          <ErrorMessage
+            field="First Name"
+            type={errors.firstName.type}
+            minLength={nameValidation.minLength}
+          />
+        )}
         <Input
           type="text"
           name="lastName"
-          value={inputs["lastName"]}
+          register={register}
           placeholder="Last Name"
-          handleChange={handleChange}
+          validation={nameValidation}
         />
+        {errors.lastName && (
+          <ErrorMessage
+            field="Last Name"
+            type={errors.lastName.type}
+            minLength={nameValidation.minLength}
+          />
+        )}
         <Input
           type="email"
           name="email"
-          value={inputs["email"]}
+          register={register}
           placeholder="Email"
-          handleChange={handleChange}
+          validation={emailValidation}
         />
+        {errors.email && (
+          <ErrorMessage
+            field="Email"
+            type={errors.email.type}
+            minLength={emailValidation.minLength}
+            maxLength={emailValidation.maxLength}
+          />
+        )}
         <Input
           type="password"
           name="password"
-          value={inputs["password"]}
+          register={register}
           placeholder="Password"
-          handleChange={handleChange}
+          validation={passwordValidation}
         />
+        {errors.password && (
+          <ErrorMessage
+            field="Password"
+            type={errors.password.type}
+            minLength={passwordValidation.minLength}
+            maxLength={passwordValidation.maxLength}
+          />
+        )}
         <Input
           type="password"
           name="confirmPassword"
-          value={inputs["confirmPassword"]}
+          register={register}
           placeholder="Confirm Password"
-          handleChange={handleChange}
+          validation={passwordValidation}
         />
+        {errors.confirmPassword && (
+          <ErrorMessage
+            field="Confirm Password"
+            type={errors.confirmPassword.type}
+            minLength={passwordValidation.minLength}
+            maxLength={passwordValidation.maxLength}
+          />
+        )}
 
-        <SignupButton type="submit">Signup</SignupButton>
+        <SignupButton>Signup</SignupButton>
       </form>
     </AuthenticationLayout>
   );
