@@ -11,14 +11,17 @@ import {
   StyledFooter,
   StyledHeader,
 } from "./StyledCart";
+import { useDispatch } from "react-redux";
+import { resetCart } from "../../redux/actions";
 function CartItems({ isOpen, setIsOpen, cart }) {
   const history = useHistory();
-
+  const dispatch = useDispatch();
   const amount = reduce(cart, 0);
 
   const checkout = () => {
     history.push("/");
     setIsOpen(false);
+    dispatch(resetCart());
   };
   return (
     <StyledModal isOpen={isOpen} setIsOpen={setIsOpen}>

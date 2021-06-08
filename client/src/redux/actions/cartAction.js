@@ -4,6 +4,7 @@ import {
   ADD_TO_CART_REQUEST,
   ADD_TO_CART_SUCCESS,
   ADD_TO_CART_FAIL,
+  RESET_CART,
 } from "../types";
 export const addToCart = (product, modifyType) => {
   const requestBody = {
@@ -30,3 +31,5 @@ const addToCartSuccess = (product, modifyType, response) => ({
   },
 });
 const addToCartFail = () => ({ type: ADD_TO_CART_FAIL });
+
+export const resetCart = () => ({ type: RESET_CART });

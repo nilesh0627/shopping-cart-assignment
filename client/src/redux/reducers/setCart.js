@@ -2,6 +2,7 @@ import {
   ADD_TO_CART_REQUEST,
   ADD_TO_CART_SUCCESS,
   ADD_TO_CART_FAIL,
+  RESET_CART,
 } from "../types";
 const initialState = {
   loading: false,
@@ -23,6 +24,8 @@ export const setCart = (state = initialState, action) => {
       };
     case ADD_TO_CART_FAIL:
       return { ...state, loading: false, error: true };
+    case RESET_CART:
+      return { ...state, loading: false, cart: [] };
     default:
       return state;
   }
