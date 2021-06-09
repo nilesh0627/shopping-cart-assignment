@@ -17,12 +17,13 @@ const ProductCard = ({ product }) => {
         <summary>
           <p>{description}</p>
         </summary>
+        <BuyStyled>
+          <p>
+            <span> @ </span>MRP Rs. {price}
+          </p>
+          <Button handleClick={buyNow}>Buy Now</Button>
+        </BuyStyled>
       </figure>
-
-      <BuyStyled>
-        <p>MRP Rs. {price}</p>
-        <Button handleClick={buyNow}>Buy Now</Button>
-      </BuyStyled>
     </ArticleStyled>
   );
 };

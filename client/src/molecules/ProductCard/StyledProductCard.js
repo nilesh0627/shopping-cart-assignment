@@ -2,33 +2,51 @@ import styled from "styled-components";
 import Image from "../../atoms/image";
 import { tablet, mobile } from "../../styles/device";
 const ImageStyled = styled(Image)`
-  width: 100%;
-
+  max-width: 100%;
   @media ${tablet} {
     width: 12rem;
-    height: 12rem;
-    flex: 1;
+    height: auto;
+    grid-column: 1/2;
+  }
+
+  @media ${mobile} {
+    width: 18rem;
+    height: auto;
+    grid-row: 1/-1;
   }
 `;
 
 const ArticleStyled = styled.article`
-  width: 100%;
+  display: grid;
   border-bottom: 2px dashed var(--light-gray);
   padding: 1rem 0;
+
   strong {
     display: block;
     height: 6rem;
     text-overflow: ellipsis;
     overflow: hidden;
     @media ${tablet} {
-      font-size: 3rem;
-      height: 8rem;
+      font-size: 2rem;
+      height: 6rem;
+    }
+    @media ${mobile} {
+      font-size: 2rem;
+      height: 5rem;
     }
   }
 
   @media ${tablet} {
     figure {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  @media ${mobile} {
+    figure {
+      grid-template-rows: 1fr auto;
     }
   }
 
@@ -39,8 +57,13 @@ const ArticleStyled = styled.article`
 
     @media ${tablet} {
       height: 12rem;
-      flex: 1;
+      grid-column: 2/-1;
       font-size: 3rem;
+    }
+
+    @media ${mobile} {
+      grid-row: 1/2;
+      min-height: 8rem;
     }
   }
 
@@ -66,6 +89,10 @@ const BuyStyled = styled.div`
 
   p {
     font-size: 1rem;
+
+    span {
+      display: none;
+    }
   }
 
   @media ${tablet} {
@@ -73,12 +100,23 @@ const BuyStyled = styled.div`
     justify-content: center;
     margin-top: 1.3rem;
     padding-bottom: 0.7rem;
-
+    grid-column: 1/-1;
+    font-size: 1.3rem !important;
     p {
       order: 2;
       color: var(--white);
-      font-size: 1.3rem;
+
+      span {
+        display: inline;
+      }
     }
+  }
+
+  @media ${mobile} {
+    grid-column: 2/-1;
+    grid-row: 2/-1;
+    margin-top: 0;
+    font-size: 1.1rem !important;
   }
 `;
 

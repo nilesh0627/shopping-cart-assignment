@@ -12,7 +12,12 @@ const StyledMain = styled.main`
   @media ${tablet} {
     grid-template-columns: repeat(2, 1fr);
     padding-left: 1rem;
-    padding-right: 4rem;
+    padding-right: 1rem;
+  }
+
+  @media ${mobile} {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 1rem;
   }
 `;
 const Products = ({ products }) => {
