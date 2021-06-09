@@ -23,7 +23,11 @@ const Main = styled.main`
   }
 
   form {
-    grid-column: 2/3;
+    grid-column: 3/4;
+
+    @media ${mobile} {
+      grid-column: 2/3;
+    }
   }
 `;
 function AuthenticationLayout({ title, summary, children }) {
