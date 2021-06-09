@@ -24,7 +24,7 @@ const ModalContent = styled.div`
   }
 
   @media ${mobile} {
-    width: 100%;
+    width: 90%;
     z-index: 200;
   }
 `;
