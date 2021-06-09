@@ -3,7 +3,7 @@ import { tablet, mobile } from "../../styles/device";
 const Modal = styled.div`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   padding-top: 3rem;
   left: 0;
   top: 0;
