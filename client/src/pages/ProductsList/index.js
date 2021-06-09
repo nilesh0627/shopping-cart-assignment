@@ -43,10 +43,7 @@ function ProductsList() {
   return (
     <>
       <ProductsLayout>
-        <CategoriesNames
-          currentCategory={currentCategory}
-          setCurrentCategory={setCurrentCategory}
-        />
+        <CategoriesNames currentCategory={currentCategory} />
         <Products products={filteredProducts} />
       </ProductsLayout>
     </>

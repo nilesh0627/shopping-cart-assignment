@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SideBarStyled, ListItem } from "./StyledCategories";
 import { getCategories } from "../../redux/actions";
 import { useHistory } from "react-router";
-const CategoriesNames = ({ currentCategory, setCurrentCategory }) => {
+const CategoriesNames = ({ currentCategory }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   useEffect(() => {
@@ -16,10 +16,8 @@ const CategoriesNames = ({ currentCategory, setCurrentCategory }) => {
 
   const setProductsCategory = (category) => {
     if (category === currentCategory) {
-      setCurrentCategory("");
       history.push("/products");
     } else {
-      setCurrentCategory(category);
       history.push(`/products/${category}`);
     }
   };
