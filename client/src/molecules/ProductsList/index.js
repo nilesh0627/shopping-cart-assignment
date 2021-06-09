@@ -17,7 +17,7 @@ const StyledMain = styled.main`
 
   @media ${mobile} {
     grid-template-columns: repeat(1, 1fr);
-    padding: 0 1rem;
+    padding: 3rem 1rem;
   }
 `;
 const Products = ({ products }) => {

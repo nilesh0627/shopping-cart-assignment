@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../../styles/device";
 export const HeaderStyles = styled.header`
   /* box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1); */
 
@@ -7,6 +8,10 @@ export const HeaderStyles = styled.header`
     align-items: center;
     max-width: var(--max-width);
     margin: 0 auto;
+
+    @media ${mobile} {
+      margin-bottom: 1.3rem;
+    }
   }
 
   nav {

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 const Main = styled("div")`
-  font-family: sans-serif;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 `;
 
 const DropDownContainer = styled("div")`
@@ -10,7 +12,7 @@ const DropDownContainer = styled("div")`
 `;
 
 const DropDownHeader = styled("div")`
-  padding: 0.4em 2em 0.4em 1em;
+  padding: 1.5rem;
   font-weight: 500;
   font-size: 1.3rem;
   color: #fff;
@@ -21,20 +23,20 @@ const DropDownHeader = styled("div")`
 const DropDownList = styled("ul")`
   padding: 0;
   margin: 0;
-  padding-left: 1em;
+  padding-left: 1.5rem;
   border: 2px solid #e5e5e5;
   box-sizing: border-box;
   color: #586074;
   font-size: 1.3rem;
   font-weight: 500;
   &:first-child {
-    padding-top: 0.8em;
+    padding-top: 1rem;
   }
 `;
 
 const ListItem = styled("li")`
   list-style: none;
-  margin-bottom: 0.8em;
+  margin-bottom: 1rem;
   cursor: pointer;
   &:hover {
     color: #b93153;

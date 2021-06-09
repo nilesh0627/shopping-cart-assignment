@@ -32,7 +32,7 @@ const ArticleStyled = styled.article`
     }
     @media ${mobile} {
       font-size: 2rem;
-      height: 5rem;
+      height: 7rem;
     }
   }
 
