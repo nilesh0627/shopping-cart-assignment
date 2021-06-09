@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../../styles/device";
 export const CarouselStyles = styled.section`
   margin-top: 1rem;
   .container {
@@ -88,6 +89,10 @@ export const CarouselStyles = styled.section`
     justify-content: center;
     position: relative;
     bottom: 4rem;
+
+    @media ${mobile} {
+      bottom: -2rem;
+    }
   }
 
   .dots > * {

@@ -6,7 +6,7 @@ function index({ className, source, alt }) {
   return (
     <img
       className={className}
-      loading="lazy"
+      // loading="lazy"
       src={process.env.PUBLIC_URL + src}
       alt={alt}
       height="auto"
