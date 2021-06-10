@@ -1,19 +1,11 @@
 import React, { memo } from "react";
-import styled from "styled-components";
 import Input from "../../atoms/Input";
-import Button from "../../atoms/Button";
 import AuthenticationLayout from "../../templates/AuthenticationLayout";
 import ErrorMessage from "../../atoms/ErrorMessage";
-import { emailValidation, passwordValidation } from "../../utils/validation";
+import { emailValidation } from "../../utils/validation";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-const LoginButton = styled(Button)`
-  display: block;
-  width: 100%;
-  margin-top: 2.3rem;
-`;
-
-const StyledForm = styled.form``;
+import { LoginButton } from "./styledLogin";
 
 function Login() {
   const {

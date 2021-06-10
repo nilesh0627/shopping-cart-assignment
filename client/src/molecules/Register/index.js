@@ -1,9 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import AuthenticationLayout from "../../templates/AuthenticationLayout";
 import ErrorMessage from "../../atoms/ErrorMessage";
 import Input from "../../atoms/Input";
-import Button from "../../atoms/Button";
+import { SignupButton } from "./styledRegister";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import {
@@ -11,11 +10,6 @@ import {
   emailValidation,
   passwordValidation,
 } from "../../utils/validation";
-const SignupButton = styled(Button)`
-  display: block;
-  width: 100%;
-  margin-top: 2.3rem;
-`;
 
 function Register() {
   const {

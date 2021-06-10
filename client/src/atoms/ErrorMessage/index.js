@@ -1,15 +1,6 @@
 import React, { memo } from "react";
-import styled from "styled-components";
+import { StyledError } from "./styledError";
 import { BiError } from "react-icons/bi";
-const StyledError = styled.div`
-  color: var(--red);
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-  > * {
-    margin-right: 0.8rem;
-  }
-`;
 const index = ({ type, field, message, minLength, maxLength }) => {
   const errorMessage = () => {
     switch (type) {

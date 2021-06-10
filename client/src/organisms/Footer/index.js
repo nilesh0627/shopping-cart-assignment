@@ -1,14 +1,5 @@
 import React, { memo } from "react";
-import styled from "styled-components";
-
-const FooterStyles = styled.footer`
-  background-color: var(--light-gray);
-  padding: 1rem 0;
-  section {
-    width: var(--max-width);
-    margin: 0 auto;
-  }
-`;
+import { FooterStyles } from "./styledFooter";
 function Footer() {
   return (
     <FooterStyles>

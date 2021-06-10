@@ -1,11 +1,5 @@
 import React, { memo } from "react";
-import styled from "styled-components";
-const StyledMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+import { StyledMain } from "./styledProductsEmpty";
 const index = () => {
   return (
     <StyledMain>
