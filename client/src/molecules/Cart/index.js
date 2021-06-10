@@ -57,4 +57,4 @@ function CartItems({ isOpen, setIsOpen, cart }) {
   );
 }
 
-export default memo(CartItems);
+export default CartItems;

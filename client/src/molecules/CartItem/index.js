@@ -36,4 +36,4 @@ const CartItem = ({ cartItem }) => {
   );
 };
 
-export default memo(CartItem);
+export default CartItem;
