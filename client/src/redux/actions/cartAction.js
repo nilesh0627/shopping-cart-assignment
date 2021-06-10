@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URL } from "../config";
+import { Axios } from "../config";
 import {
   ADD_TO_CART_REQUEST,
   ADD_TO_CART_SUCCESS,
@@ -13,7 +12,7 @@ export const addToCart = (product, modifyType) => {
   return async (dispatch) => {
     dispatch(addToCartRequest());
     try {
-      // const response = await axios.post(`${BASE_URL}/addToCart`, requestBody);
+      // const response = await Axios.post(`${BASE_URL}/addToCart`, requestBody);
       const response = "Product added successfully";
       dispatch(addToCartSuccess(product, modifyType, response));
     } catch (e) {

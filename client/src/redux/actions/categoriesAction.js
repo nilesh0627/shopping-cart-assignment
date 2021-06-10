@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URL } from "../config";
+import { Axios } from "../config";
 import {
   GET_CATEGORIES_REQUEST,
   GET_CATEGORIES_SUCCESS,
@@ -9,7 +8,7 @@ export function getCategories() {
   return async (dispatch) => {
     dispatch(getCategoriesRequest());
     try {
-      const categories = await axios.get(`${BASE_URL}/categories`);
+      const categories = await Axios.get(`/categories`);
       dispatch(getCategoriesSuccess(categories));
     } catch (e) {
       dispatch(getCategoriesFail());

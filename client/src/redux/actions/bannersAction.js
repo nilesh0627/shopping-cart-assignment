@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URL } from "../config";
+import { Axios } from "../config";
 import {
   GET_BANNERS_REQUEST,
   GET_BANNERS_SUCCESS,
@@ -9,7 +8,7 @@ export function getBanners() {
   return async (dispatch) => {
     dispatch(getBannersRequest());
     try {
-      const bannerData = await axios.get(`${BASE_URL}/banners`);
+      const bannerData = await Axios.get(`/banners`);
       dispatch(getBannersSuccess(bannerData));
     } catch (e) {
       dispatch(getBannersFail());
