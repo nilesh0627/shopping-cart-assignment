@@ -1,5 +1,4 @@
-import axios from "axios";
-import { BASE_URL } from "../config";
+import { Axios } from "../config";
 import {
   GET_PRODUCTS_REQUEST,
   GET_PRODUCTS_SUCCESS,
@@ -10,7 +9,7 @@ export const productsAction = () => {
   return async (dispatch) => {
     dispatch(productsRequest());
     try {
-      const productsData = await axios.get(`${BASE_URL}/products`);
+      const productsData = await Axios.get(`/products`);
       dispatch(productsSuccess(productsData));
     } catch (e) {
       dispatch(productsFail());
