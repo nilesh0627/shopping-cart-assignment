@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import ProductsList from "../pages/ProductsList";
@@ -18,4 +18,4 @@ function Routes() {
   );
 }
 
-export default Routes;
+export default memo(Routes);

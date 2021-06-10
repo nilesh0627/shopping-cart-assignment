@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Button from "../../atoms/Button";
 import CartItem from "../CartItem";
 import { EmptyBody, EmptyFooter } from "../CartEmpty";
@@ -57,4 +57,4 @@ function CartItems({ isOpen, setIsOpen, cart }) {
   );
 }
 
-export default CartItems;
+export default memo(CartItems);

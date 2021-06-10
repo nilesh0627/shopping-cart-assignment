@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
 import Header from "../organisms/Header";
@@ -11,6 +11,11 @@ const LayoutStyles = styled.main`
 `;
 function MainLayout() {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    isOpen
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "unset");
+  }, [isOpen]);
   return (
     <BrowserRouter>
       <Cart isOpen={isOpen} setIsOpen={setIsOpen} />
@@ -23,4 +28,4 @@ function MainLayout() {
   );
 }
 
-export default MainLayout;
+export default memo(MainLayout);

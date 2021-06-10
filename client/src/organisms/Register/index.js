@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Register from "../../molecules/Register";
 function index() {
   return (
@@ -8,4 +8,4 @@ function index() {
   );
 }
 
-export default index;
+export default memo(index);

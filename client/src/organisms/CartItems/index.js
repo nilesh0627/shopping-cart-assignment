@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useSelector } from "react-redux";
 import Cart from "../../molecules/Cart";
 function CartItems({ isOpen, setIsOpen }) {
@@ -8,4 +8,4 @@ function CartItems({ isOpen, setIsOpen }) {
   return <Cart isOpen={isOpen} setIsOpen={setIsOpen} cart={cart} />;
 }
 
-export default CartItems;
+export default memo(CartItems);

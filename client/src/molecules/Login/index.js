@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
@@ -62,7 +62,7 @@ function Login() {
   );
 }
 
-export default Login;
+export default memo(Login);
 
 // {
 //   errors.password && (

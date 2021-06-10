@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Modal, ModalContent } from "./StyledModal";
 const index = ({ isOpen, children }) => {
   return (
@@ -8,4 +8,4 @@ const index = ({ isOpen, children }) => {
   );
 };
 
-export default index;
+export default memo(index);

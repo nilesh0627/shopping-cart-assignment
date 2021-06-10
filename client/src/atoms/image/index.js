@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 function index({ className, source, alt }) {
   const src = source ? source : "/static/images/category/beverages.png";
@@ -14,4 +14,4 @@ function index({ className, source, alt }) {
   );
 }
 
-export default index;
+export default memo(index);

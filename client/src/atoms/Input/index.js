@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import styled, { css } from "styled-components";
 
 const FieldSet = styled.fieldset`
@@ -57,4 +57,4 @@ function Input({ type, name, validate, register, validation, placeholder }) {
   );
 }
 
-export default Input;
+export default memo(Input);

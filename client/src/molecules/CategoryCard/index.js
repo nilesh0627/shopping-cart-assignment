@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import Image from "../../atoms/image";
 import Button from "../../atoms/Button";
@@ -19,4 +19,4 @@ function Category({ explore, id, name, description, imageUrl, orderType }) {
   );
 }
 
-export default Category;
+export default memo(Category);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 const StyledMain = styled.main`
   display: flex;
@@ -14,4 +14,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default memo(index);

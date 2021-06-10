@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { mobile } from "../styles/device";
 const Main = styled.main`
@@ -42,4 +42,4 @@ function AuthenticationLayout({ title, summary, children }) {
   );
 }
 
-export default AuthenticationLayout;
+export default memo(AuthenticationLayout);

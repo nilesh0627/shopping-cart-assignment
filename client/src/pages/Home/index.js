@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Carousel from "../../organisms/Banners";
 import Categories from "../../organisms/Categories";
 function index() {
@@ -10,4 +10,4 @@ function index() {
   );
 }
 
-export default index;
+export default memo(index);

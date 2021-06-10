@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import { BiError } from "react-icons/bi";
 const StyledError = styled.div`
@@ -38,4 +38,4 @@ const index = ({ type, field, message, minLength, maxLength }) => {
   );
 };
 
-export default index;
+export default memo(index);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import Image from "../../atoms/image";
 import { Link } from "react-router-dom";
@@ -23,4 +23,4 @@ function index() {
   );
 }
 
-export default index;
+export default memo(index);

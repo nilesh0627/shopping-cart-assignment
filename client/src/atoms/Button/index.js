@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 const ButtonStyles = styled.button`
   border: none;
@@ -16,4 +16,4 @@ function Button({ handleClick, type, className, children }) {
   );
 }
 
-export default Button;
+export default memo(Button);

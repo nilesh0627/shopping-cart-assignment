@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import Image from "../../atoms/image";
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
@@ -70,4 +70,4 @@ const CartItem = ({ cartItem }) => {
   );
 };
 
-export default CartItem;
+export default memo(CartItem);
