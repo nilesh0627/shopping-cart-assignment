@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Image from "../../atoms/image";
+import Image from "../../atoms/Image";
 const StyledGrid = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

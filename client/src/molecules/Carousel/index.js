@@ -1,6 +1,6 @@
 import React, { useState, memo } from "react";
 import { BsDot } from "react-icons/bs";
-import Image from "../../atoms/image";
+import Image from "../../atoms/Image";
 import { CarouselStyles } from "./CarouselStyles";
 
 function Carousel({ bannersData }) {

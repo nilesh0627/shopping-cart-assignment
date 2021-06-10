@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
-import Image from "../../atoms/image";
+import Image from "../../atoms/Image";
 import Button from "../../atoms/Button";
 import { CategoryStyles } from "./CardStyles";
 function Category({ explore, id, name, description, imageUrl, orderType }) {

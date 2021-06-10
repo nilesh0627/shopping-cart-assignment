@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Image from "../../atoms/image";
+import Image from "../../atoms/Image";
 import { tablet, mobile } from "../../styles/device";
 const ImageStyled = styled(Image)`
   max-width: 100%;

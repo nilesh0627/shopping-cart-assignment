@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import Image from "../../atoms/image";
+import Image from "../../atoms/Image";
 import { Link } from "react-router-dom";
 import { LogoStyles } from "./styledLogo";
 function index() {
