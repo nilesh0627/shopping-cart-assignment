@@ -33,14 +33,15 @@ export const setCart = (state = initialState, action) => {
 
 const newCart = (cart, modifyType, product) => {
   const quantity = modifyType === "INCREMENT" ? 1 : -1;
-  if (product.quantity === 1 && quantity === -1)
+  const cartItem = cart.filter((item) => item.id === product.id);
+  if (!cartItem?.length) return [...cart, { ...product, quantity: 1 }];
+  if (cartItem[0].quantity + quantity === 0)
     return cart.filter((item) => item.id !== product.id);
-  for (let i = 0; i < cart.length; i++) {
-    if (cart[i].id === product.id) {
-      cart[i].quantity += quantity;
-      return cart;
-    }
-  }
-  cart.push({ ...product, quantity: quantity });
-  return cart;
+  else if (cartItem[0].quantity >= 1) {
+    return cart.map((item) =>
+      item.id !== product.id
+        ? item
+        : { ...item, quantity: item.quantity + quantity }
+    );
+  } else return cart;
 };

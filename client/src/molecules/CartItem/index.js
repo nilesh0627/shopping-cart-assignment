@@ -20,13 +20,17 @@ const CartItem = ({ cartItem }) => {
           <AiFillMinusCircle
             size={20}
             color="#B93153"
-            onClick={() => dispatch(addToCart(cartItem, "DECREMENT"))}
+            onClick={() => {
+              dispatch(addToCart(cartItem, "DECREMENT"));
+            }}
           />{" "}
           <div>{quantity}</div>
           <AiFillPlusCircle
             size={20}
             color="#B93153"
-            onClick={() => dispatch(addToCart(cartItem, "INCREMENT"))}
+            onClick={() => {
+              dispatch(addToCart(cartItem, "INCREMENT"));
+            }}
           />
           <div>Rs. {price}</div>
         </div>
@@ -36,4 +40,4 @@ const CartItem = ({ cartItem }) => {
   );
 };
 
-export default CartItem;
+export default memo(CartItem);

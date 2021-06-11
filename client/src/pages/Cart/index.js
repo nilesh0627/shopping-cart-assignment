@@ -4,4 +4,4 @@ function Cart({ isOpen, setIsOpen }) {
   return <CartItems isOpen={isOpen} setIsOpen={setIsOpen} />;
 }
 
-export default Cart;
+export default memo(Cart);
