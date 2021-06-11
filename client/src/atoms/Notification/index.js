@@ -4,7 +4,7 @@ import { GrStatusGood } from "react-icons/gr";
 const StyledNotification = styled.div`
   position: fixed;
   top: 2rem;
-  left: 40vw;
+  right: 2rem;
   color: #270;
   background-color: #dff2bf;
   font-weight: 600;
