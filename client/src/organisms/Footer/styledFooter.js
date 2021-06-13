@@ -3,8 +3,9 @@ import { mobile } from "../../styles/device";
 export const FooterStyles = styled.footer`
   background-color: var(--light-gray);
   padding: 1rem 0;
+  max-width: 100%;
   section {
-    width: var(--max-width);
+    max-width: var(--max-width);
     margin: 0 auto;
   }
   @media ${mobile} {

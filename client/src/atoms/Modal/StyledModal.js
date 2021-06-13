@@ -17,7 +17,7 @@ const ModalContent = styled.div`
   background-color: var(--white);
   color: var(--black);
   margin: auto;
-  width: 32%;
+  width: 40%;
 
   @media ${tablet} {
     width: 70%;

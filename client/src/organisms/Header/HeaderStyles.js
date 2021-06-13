@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { mobile } from "../../styles/device";
 export const HeaderStyles = styled.header`
-  /* box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1); */
+  max-width: 100%;
 
   .container {
     display: flex;
