@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { GrStatusGood } from "react-icons/gr";
 const StyledNotification = styled.div`
   position: fixed;
-  top: 2rem;
+  top: 7rem;
   right: 2rem;
   color: #270;
   background-color: #dff2bf;
@@ -12,6 +12,7 @@ const StyledNotification = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  z-index: 101;
   div {
     padding-left: 1rem;
   }
