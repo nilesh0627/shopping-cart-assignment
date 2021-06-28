@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { tablet, mobile } from "../../styles/device";
 const Modal = styled.div`
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
   position: fixed;
@@ -17,16 +16,7 @@ const ModalContent = styled.div`
   background-color: var(--white);
   color: var(--black);
   margin: auto;
-  width: 40%;
-
-  @media ${tablet} {
-    width: 70%;
-  }
-
-  @media ${mobile} {
-    width: 90%;
-    z-index: 200;
-  }
+  width: 33%;
 `;
 
 export { Modal, ModalContent };

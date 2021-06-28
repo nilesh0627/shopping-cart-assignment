@@ -18,8 +18,8 @@ function MainLayout() {
   }, [isOpen]);
   return (
     <BrowserRouter>
-      <Cart isOpen={isOpen} setIsOpen={setIsOpen} />
       <Header setIsOpen={setIsOpen} />
+      {isOpen && <Cart isOpen={isOpen} setIsOpen={setIsOpen} />}
       <LayoutStyles>
         <Routes />
       </LayoutStyles>

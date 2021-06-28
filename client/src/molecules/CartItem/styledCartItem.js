@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import Image from "../../atoms/Image";
 const StyledGrid = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  display: flex;
+  align-items: center;
   background-color: var(--white);
   padding: 1rem;
   gap: 1rem;
@@ -11,15 +10,18 @@ const StyledGrid = styled.section`
 `;
 
 const StyledCartImage = styled(Image)`
-  grid-column: 1/2;
-  grid-row: 1/-1;
-  width: 75%;
+  max-width: 8rem;
+
+  @media (max-width: 900px) {
+    max-width: 8rem;
+    min-width: 8rem;
+  }
 `;
 
 const StyledArticle = styled.article`
-  grid-column: 2/4;
-  grid-row: 1/-1;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
   div {
     display: flex;
@@ -35,8 +37,8 @@ const StyledArticle = styled.article`
 `;
 
 const StyledPrice = styled.article`
-  grid-row: 2/-1;
-  grid-column: 4/-1;
+  align-self: flex-end;
+  margin-left: auto;
 `;
 
 export { StyledGrid, StyledArticle, StyledCartImage, StyledPrice };
