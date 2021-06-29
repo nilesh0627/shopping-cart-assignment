@@ -8,6 +8,7 @@ const ListItem = styled.li`
   color: var(--dark-gray);
   padding: 1rem 0;
   padding-left: 2rem;
+  padding-right: 2rem;
   border-bottom: 1px solid var(--gray);
   cursor: pointer;
   :hover {

@@ -5,6 +5,10 @@ export const CategoryStyles = styled.section`
   align-items: center;
   padding: 2rem 0;
 
+  article {
+    padding: 1.5rem;
+  }
+
   @media ${mobile} {
     font-size: 1.2rem;
   }

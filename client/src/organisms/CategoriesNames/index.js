@@ -4,6 +4,7 @@ import { getCategories } from "../../redux/actions";
 import CategorySidebar from "../../molecules/CategorySidebar";
 import CategoryDropDown from "../../molecules/CategoryDropDown";
 const CategoriesNames = ({ currentCategory }) => {
+  const { categories } = useSelector(({ categoriesData }) => categoriesData);
   const getWindowDimensions = () => {
     const { innerWidth: width, innerHeight: height } = window;
     return {
@@ -17,7 +18,7 @@ const CategoriesNames = ({ currentCategory }) => {
   );
   useEffect(() => {
     if (!categories.length) dispatch(getCategories());
-  }, [dispatch]);
+  }, [dispatch, categories.length]);
 
   const handleResize = () => {
     setWindowDimensions(getWindowDimensions());
@@ -26,11 +27,8 @@ const CategoriesNames = ({ currentCategory }) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const { loading, error, categories } = useSelector(
-    ({ categoriesData }) => categoriesData
-  );
 
   return (
     <>

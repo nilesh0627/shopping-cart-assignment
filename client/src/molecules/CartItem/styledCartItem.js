@@ -25,14 +25,12 @@ const StyledArticle = styled.article`
 
   div {
     display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   div > *:nth-child(odd) {
     cursor: pointer;
-  }
-
-  div > div {
-    padding: 0 1.3rem;
   }
 `;
 
