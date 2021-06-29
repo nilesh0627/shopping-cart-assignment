@@ -14,5 +14,6 @@ export const StyledTagLine = styled.article`
   gap: 1rem;
   background-color: var(--white);
   padding: 1rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
 `;

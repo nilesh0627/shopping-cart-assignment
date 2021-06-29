@@ -5,4 +5,5 @@ export const StyledMain = styled.main`
   justify-content: center;
   align-items: center;
   margin: 15rem auto;
+  padding: 2rem;
 `;
