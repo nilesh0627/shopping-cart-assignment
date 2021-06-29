@@ -6,12 +6,13 @@ import {
   RESET_CART,
 } from "../types";
 export const addToCart = (product, modifyType) => {
-  const requestBody = {
-    id: product.id,
-  };
+  // const requestBody = {
+  //   id: product.id,
+  // };
   return async (dispatch) => {
     dispatch(addToCartRequest());
     try {
+      //tried https://crossorigin.me but didn't work
       // const response = await Axios.post(`${BASE_URL}/addToCart`, requestBody);
       const response = "Product added successfully";
       dispatch(addToCartSuccess(product, modifyType, response));
