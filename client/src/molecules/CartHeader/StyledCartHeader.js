@@ -5,7 +5,7 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: var(--black);
-  padding: 0 1.4rem;
+  padding: 1.4rem;
   position: sticky;
   div {
     color: var(--white);
@@ -14,7 +14,6 @@ const StyledHeader = styled.header`
 const Close = styled.span`
   color: var(--light-gray);
   text-align: right;
-  font-size: 3.8rem;
 
   :hover,
   :focus {

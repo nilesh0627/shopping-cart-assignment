@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledHeader, Close } from "./StyledCartHeader";
+import { CgClose } from "react-icons/cg";
 function index({ cart, setIsOpen }) {
   return (
     <StyledHeader>
@@ -7,7 +8,11 @@ function index({ cart, setIsOpen }) {
         <strong>My Cart </strong>
         {cart.length ? <span>({cart.length} items)</span> : ""}
       </div>
-      <Close onClick={() => setIsOpen(false)}>&times;</Close>
+      {window.innerWidth > 900 && (
+        <Close onClick={() => setIsOpen(false)}>
+          <CgClose size={18} />
+        </Close>
+      )}
     </StyledHeader>
   );
 }
