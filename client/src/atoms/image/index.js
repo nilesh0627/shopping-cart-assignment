@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 
-function index({ className, source, alt }) {
+function index({ className, source, alt, ...rest }) {
   const src = source ? source : "/static/images/category/beverages.png";
 
   return (
@@ -10,6 +10,7 @@ function index({ className, source, alt }) {
       src={process.env.PUBLIC_URL + src}
       alt={alt}
       height="auto"
+      {...rest}
     />
   );
 }
