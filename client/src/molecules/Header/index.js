@@ -1,19 +1,15 @@
-import React, { memo } from "react";
+import React, { memo, useCallback } from "react";
 import Logo from "../../molecules/Logo";
 import { HeaderStyles } from "./HeaderStyles";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 function Header({ setIsOpen, cart }) {
-  const openCart = () => {
-    setIsOpen(true);
-  };
-  const closeCart = () => {
-    setIsOpen(false);
-  };
+  const openCart = useCallback(() => setIsOpen(true), [setIsOpen]);
+  const closeCart = useCallback(() => setIsOpen(false), [setIsOpen]);
   return (
     <HeaderStyles className="shadow">
       <div className="container">
-        <Logo />
+        <Logo closeCart={closeCart} />
         <nav>
           <Link to="/" onClick={closeCart}>
             Home
