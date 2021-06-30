@@ -23,17 +23,15 @@ const ArticleStyled = styled.article`
 
   strong {
     display: block;
-    height: 6rem;
-    text-overflow: ellipsis;
+    font-size: 1.6rem;
+    height: 5rem;
+    margin-bottom: 1.3rem;
     overflow: hidden;
-    @media ${tablet} {
-      font-size: 2rem;
-      height: 6rem;
-    }
-    @media ${mobile} {
-      font-size: 2rem;
-      height: 7rem;
-    }
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    margin-bottom: 1.3rem;
   }
 
   @media ${tablet} {
@@ -52,30 +50,27 @@ const ArticleStyled = styled.article`
 
   summary {
     background-color: var(--light-gray);
-    padding: 0.5rem;
-    height: 7.3rem;
-
+    padding: 1rem;
+    height: 10rem;
     @media ${tablet} {
-      height: 12rem;
       grid-column: 2/-1;
+      height: auto;
       font-size: 3rem;
     }
-
     @media ${mobile} {
       grid-row: 1/2;
-      min-height: 8rem;
     }
   }
 
   summary > p {
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
     font-size: 1.2rem;
-    height: 6rem;
-    text-align: center;
 
     @media ${tablet} {
-      height: 80%;
       font-size: 1.4rem;
     }
   }

@@ -9,6 +9,7 @@ export const HeaderStyles = styled.header`
     margin: 0 auto;
     @media ${mobile} {
       margin-bottom: 1.3rem;
+      font-size: 1.3rem;
     }
   }
   nav {
