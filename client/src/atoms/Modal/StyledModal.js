@@ -16,8 +16,8 @@ const ModalContent = styled.div`
   background-color: var(--white);
   color: var(--black);
   margin: auto;
-  margin-right: 30rem;
-  width: 33%;
+  margin-left: 45%;
+  width: 40rem;
 `;
 
 export { Modal, ModalContent };
