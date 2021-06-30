@@ -6,7 +6,7 @@ export const LogoStyles = styled.figure`
     max-width: 14rem;
 
     @media ${mobile} {
-      max-width: 8rem;
+      max-width: 7rem;
     }
   }
 `;
