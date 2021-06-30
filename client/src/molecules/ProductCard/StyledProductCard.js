@@ -24,7 +24,7 @@ const ArticleStyled = styled.article`
   strong {
     display: block;
     font-size: 1.6rem;
-    height: 5rem;
+    height: 9rem;
     margin-bottom: 1.3rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -32,6 +32,14 @@ const ArticleStyled = styled.article`
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
     margin-bottom: 1.3rem;
+
+    @media ${tablet} {
+      height: 5rem;
+    }
+
+    @media ${mobile} {
+      height: auto;
+    }
   }
 
   @media ${tablet} {
@@ -39,6 +47,7 @@ const ArticleStyled = styled.article`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
+      margin-top: 1rem;
     }
   }
 

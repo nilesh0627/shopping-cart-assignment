@@ -17,6 +17,11 @@ export const HeaderStyles = styled.header`
     display: flex;
     align-self: center;
     gap: 2rem;
+    padding: 0 1rem;
+
+    @media (max-width: 274px) {
+      display: none;
+    }
   }
   .cart {
     display: flex;
