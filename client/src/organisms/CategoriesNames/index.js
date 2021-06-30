@@ -1,35 +1,16 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../redux/actions";
 import CategorySidebar from "../../molecules/CategorySidebar";
 import CategoryDropDown from "../../molecules/CategoryDropDown";
+import { useDimensions } from "../../utils/useDimensions";
 const CategoriesNames = ({ currentCategory }) => {
   const { categories } = useSelector(({ categoriesData }) => categoriesData);
-  const getWindowDimensions = () => {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  };
   const dispatch = useDispatch();
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
   useEffect(() => {
     if (!categories.length) dispatch(getCategories());
   }, [dispatch, categories.length]);
-
-  const handleResize = () => {
-    setWindowDimensions(getWindowDimensions());
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
+  const windowDimensions = useDimensions();
   return (
     <>
       {windowDimensions.width > 600 && (

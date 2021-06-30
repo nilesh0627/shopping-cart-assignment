@@ -1,28 +1,9 @@
 import React, { memo } from "react";
-import { useState, useEffect } from "react";
 import CartDesktop from "../../organisms/CartDesktop";
 import CartTablet from "../../organisms/CartTablet";
+import { useDimensions } from "../../utils/useDimensions";
 function Cart({ isOpen, setIsOpen }) {
-  const getWindowDimensions = () => {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  };
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
-
-  const handleResize = () => {
-    setWindowDimensions(getWindowDimensions());
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const windowDimensions = useDimensions();
   return (
     <>
       {windowDimensions.width > 900 && (
