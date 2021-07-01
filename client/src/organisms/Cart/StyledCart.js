@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Modal } from "../../atoms/Modal/StyledModal";
+import Modal from "../../atoms/Modal";
 
 const StyledCartModal = styled(Modal)`
   position: relative;
