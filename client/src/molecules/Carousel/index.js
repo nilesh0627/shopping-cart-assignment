@@ -4,7 +4,7 @@ import Image from "../../atoms/Image";
 import { CarouselStyles } from "./CarouselStyles";
 
 function Carousel({ bannersData }) {
-  const { banners, error, loading } = bannersData;
+  const { banners } = bannersData;
   const [activeIndex, setActiveIndex] = useState(0);
   const next = (increment) =>
     setActiveIndex(
@@ -28,7 +28,6 @@ function Carousel({ bannersData }) {
           className="slide"
           source={banner.bannerImageUrl}
           alt={banner.bannerImageAlt}
-          loading={loading}
         />
       </section>
     );

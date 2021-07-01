@@ -12,10 +12,6 @@ export const CarouselStyles = styled.section`
   }
   .fade-in {
     animation: fadeIn ease 3s;
-    -webkit-animation: fadeIn ease 3s;
-    -moz-animation: fadeIn ease 3s;
-    -o-animation: fadeIn ease 3s;
-    -ms-animation: fadeIn ease 3s;
   }
   @keyframes fadeIn {
     0% {
