@@ -1,24 +1,19 @@
 import { useState, useEffect } from "react";
-export function useDimensions() {
-  const getWindowDimensions = () => {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-      width,
-      height,
-    };
-  };
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
 
-  const handleResize = () => {
-    setWindowDimensions(getWindowDimensions());
-  };
+export function useDimensions(query) {
+  const [matches, setMatches] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return windowDimensions;
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => {
+      setMatches(media.matches);
+    };
+    media.addListener(listener);
+    return () => media.removeListener(listener);
+  }, [matches, query]);
+
+  return matches;
 }

@@ -9,13 +9,12 @@ import { resetCart } from "../../redux/actions";
 import { useDimensions } from "../../utils/useDimensions";
 import { StyledCartModal, StyledCartSection } from "./StyledCart";
 function CartItems({ isOpen, setIsOpen }) {
-  const windowDimensions = useDimensions();
+  const isPageWide = useDimensions("(min-width: 900px)");
   const { cart } = useSelector(({ cartData }) => cartData);
   const history = useHistory();
   const dispatch = useDispatch();
   const amount = reduce(cart, 0);
-  const StyledCart =
-    windowDimensions.width > 900 ? StyledCartModal : StyledCartSection;
+  const StyledCart = isPageWide ? StyledCartModal : StyledCartSection;
   const checkout = () => {
     history.push("/");
     setIsOpen(false);

@@ -10,17 +10,16 @@ const CategoriesNames = ({ currentCategory }) => {
   useEffect(() => {
     if (!categories.length) dispatch(getCategories());
   }, [dispatch, categories.length]);
-  const windowDimensions = useDimensions();
+  const isPageWide = useDimensions("(min-width: 600px)");
   return (
     <>
-      {windowDimensions.width > 600 && (
+      {isPageWide && (
         <CategorySidebar
           currentCategory={currentCategory}
           categories={categories}
         />
       )}
-
-      {windowDimensions.width <= 600 && (
+      {!isPageWide && (
         <CategoryDropDown
           currentCategory={currentCategory}
           categories={categories}
