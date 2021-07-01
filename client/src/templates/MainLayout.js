@@ -19,7 +19,7 @@ function MainLayout() {
       <LayoutStyles isOpen={isOpen}>
         <Routes />
       </LayoutStyles>
-      <Footer />
+      <Footer isOpen={isOpen} />
     </BrowserRouter>
   );
 }

@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  position: sticky;
-  left: 0;
-  bottom: 0;
+  background-color: var(--white);
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
 
   > div {
     padding-bottom: 1rem;

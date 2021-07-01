@@ -6,6 +6,7 @@ const StyledCartModal = styled(Modal)`
 `;
 const StyledCartSection = styled.main`
   position: relative;
+  padding: 1rem 0;
 `;
 
 export { StyledCartModal, StyledCartSection };

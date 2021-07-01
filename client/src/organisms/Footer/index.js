@@ -1,8 +1,8 @@
 import React, { memo } from "react";
 import { FooterStyles } from "./styledFooter";
-function Footer() {
+function Footer({ isOpen }) {
   return (
-    <FooterStyles>
+    <FooterStyles isOpen={isOpen}>
       <section>
         CopyRight &copy; 2011-2018 Sabka Bazaar Groceries Supplies Pvt. Ltd
       </section>
