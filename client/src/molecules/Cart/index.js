@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CartHeader from "../../molecules/CartHeader";
 import CartBody from "../../molecules/CartBody";
 import CartFooter from "../../molecules/CartFooter";
@@ -6,7 +6,6 @@ import { StyledCartModal } from "./styledCart";
 import { useCart } from "../../utils/useCart";
 function Cart({ cart, amount, checkout }) {
   const { isCartOpen } = useCart();
-  console.log(isCartOpen + "--->>in cart");
   return (
     <StyledCartModal isOpen={isCartOpen}>
       <CartHeader cart={cart} />
