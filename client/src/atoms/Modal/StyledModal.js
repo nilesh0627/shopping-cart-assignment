@@ -10,6 +10,12 @@ const Modal = styled.div`
   height: 100%;
   overflow-y: ${({ isOpen }) => (isOpen ? "hidden" : "auto")};
   background-color: rgba(0, 0, 0, 0.7);
+
+  @media (max-width: 900px) {
+    padding-top: 0;
+    margin-top: 7rem;
+    background-color: var(--white);
+  }
 `;
 
 const ModalContent = styled.div`
@@ -18,6 +24,10 @@ const ModalContent = styled.div`
   margin: auto;
   margin-left: 45%;
   width: 40rem;
+  @media (max-width: 900px) {
+    margin-left: 0;
+    width: 100%;
+  }
 `;
 
 export { Modal, ModalContent };

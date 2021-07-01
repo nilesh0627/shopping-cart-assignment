@@ -29,17 +29,5 @@ export const HeaderStyles = styled.header`
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    .items {
-      display: flex;
-      align-items: center;
-      background-color: var(--light-gray);
-      padding: 1rem;
-      padding-bottom: 1.5rem;
-      cursor: pointer;
-      div {
-        width: 6rem;
-        padding-left: 1rem;
-      }
-    }
   }
 `;

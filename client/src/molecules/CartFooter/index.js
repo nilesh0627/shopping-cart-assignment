@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../atoms/Button";
 import { EmptyFooter } from "../CartEmpty";
 import { StyledFooter } from "./StyledCartFooter";
-function index({ cart, checkout, amount, setIsOpen }) {
+function index({ cart, checkout, amount }) {
   return (
     <>
       {cart.length ? (
@@ -14,7 +14,7 @@ function index({ cart, checkout, amount, setIsOpen }) {
           </Button>
         </StyledFooter>
       ) : (
-        <EmptyFooter setIsOpen={setIsOpen} />
+        <EmptyFooter />
       )}
     </>
   );

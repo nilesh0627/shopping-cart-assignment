@@ -1,37 +1,23 @@
 import React, { memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import CartHeader from "../../molecules/CartHeader";
-import CartBody from "../../molecules/CartBody";
-import CartFooter from "../../molecules/CartFooter";
 import { useHistory } from "react-router-dom";
 import { reduce } from "../../utils/reduce";
 import { resetCart } from "../../redux/actions";
-import { useDimensions } from "../../utils/useDimensions";
-import { StyledCartModal, StyledCartSection } from "./StyledCart";
-function CartItems({ isOpen, setIsOpen }) {
-  const isPageWide = useDimensions("(min-width: 900px)");
+import Cart from "../../molecules/Cart";
+import { useCart } from "../../utils/useCart";
+function CartItems() {
   const { cart } = useSelector(({ cartData }) => cartData);
   const history = useHistory();
   const dispatch = useDispatch();
+  const { closeCart } = useCart();
   const amount = reduce(cart, 0);
-  const StyledCart = isPageWide ? StyledCartModal : StyledCartSection;
   const checkout = () => {
-    history.push("/");
-    setIsOpen(false);
+    closeCart();
     dispatch(resetCart());
+    history.push("/");
   };
-  return (
-    <StyledCart isOpen={isOpen} setIsOpen={setIsOpen}>
-      <CartHeader cart={cart} setIsOpen={setIsOpen} />
-      <CartBody cart={cart} />
-      <CartFooter
-        cart={cart}
-        checkout={checkout}
-        amount={amount}
-        setIsOpen={setIsOpen}
-      />
-    </StyledCart>
-  );
+
+  return <Cart cart={cart} amount={amount} checkout={checkout} />;
 }
 
 export default memo(CartItems);

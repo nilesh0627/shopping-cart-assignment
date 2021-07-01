@@ -2,10 +2,10 @@ import React, { memo } from "react";
 import Logo from "../../molecules/Logo";
 import { HeaderStyles } from "./HeaderStyles";
 import { Link } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
-function Header({ setIsOpen, cart }) {
-  const openCart = () => setIsOpen(true);
-  const closeCart = () => setIsOpen(false);
+import CartButton from "../CartButton";
+import { useCart } from "../../utils/useCart";
+function Header({ cart }) {
+  const { closeCart, openCart } = useCart();
   return (
     <HeaderStyles className="shadow">
       <div className="container">
@@ -27,10 +27,7 @@ function Header({ setIsOpen, cart }) {
               Register
             </Link>
           </nav>
-          <div className="items" onClick={openCart}>
-            <FaShoppingCart className="cartIcon" color="#B93153" size={23} />
-            <div>{cart.length} Items</div>
-          </div>
+          <CartButton cart={cart} />
         </div>
       </div>
     </HeaderStyles>

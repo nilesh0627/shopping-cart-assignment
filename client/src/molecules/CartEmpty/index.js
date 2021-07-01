@@ -1,6 +1,7 @@
 import React from "react";
 import { StyledEmptyBody, StyledFooter } from "./styledCartEmpty";
 import { useHistory } from "react-router-dom";
+import { useCart } from "../../utils/useCart";
 import Button from "../../atoms/Button";
 const EmptyBody = () => {
   return (
@@ -11,11 +12,12 @@ const EmptyBody = () => {
   );
 };
 
-const EmptyFooter = ({ setIsOpen }) => {
+const EmptyFooter = () => {
   const history = useHistory();
+  const { closeCart } = useCart();
   const startShopping = () => {
     history.push("/products");
-    setIsOpen(false);
+    closeCart();
   };
   return (
     <StyledFooter>
