@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Cart from "../pages/Cart";
 import Header from "../organisms/Header";
-function CartWrapper() {
-  const [isOpen, setIsOpen] = useState(false);
+function CartWrapper({ isOpen, setIsOpen }) {
   useEffect(() => {
     isOpen
       ? (document.body.style.overflow = "hidden")
