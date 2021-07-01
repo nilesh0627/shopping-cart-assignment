@@ -6,11 +6,7 @@ import { StyledCartModal } from "./styledCart";
 import { useCart } from "../../utils/useCart";
 function Cart({ cart, amount, checkout }) {
   const { isCartOpen } = useCart();
-  useEffect(() => {
-    isCartOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "unset");
-  }, [isCartOpen]);
+  console.log(isCartOpen + "--->>in cart");
   return (
     <StyledCartModal isOpen={isCartOpen}>
       <CartHeader cart={cart} />

@@ -13,7 +13,7 @@ const Modal = styled.div`
 
   @media (max-width: 900px) {
     padding-top: 0;
-    margin-top: 7rem;
+    margin-top: 6.6rem;
     background-color: var(--white);
   }
 `;
@@ -26,6 +26,7 @@ const ModalContent = styled.div`
   width: 40rem;
   @media (max-width: 900px) {
     margin-left: 0;
+    padding-top: 1.5rem;
     width: 100%;
   }
 `;

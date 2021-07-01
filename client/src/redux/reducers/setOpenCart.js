@@ -1,6 +1,6 @@
 import { OPEN_CART_REQUEST, CLOSE_CART_REQUEST } from "../types";
-const isOpen = false;
-export function setOpenCart(state = isOpen, action) {
+const isCartOpen = false;
+export function setOpenCart(state = isCartOpen, action) {
   switch (action.type) {
     case OPEN_CART_REQUEST:
       return true;
