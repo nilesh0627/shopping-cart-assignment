@@ -5,7 +5,7 @@ import { StyledBody, StyledTagLine } from "./StyledCartBody";
 import Image from "../../atoms/Image";
 function index({ cart }) {
   return (
-    <div>
+    <>
       {cart.length ? (
         <StyledBody>
           {cart.map((item) => (
@@ -23,7 +23,7 @@ function index({ cart }) {
       ) : (
         <EmptyBody />
       )}
-    </div>
+    </>
   );
 }
 

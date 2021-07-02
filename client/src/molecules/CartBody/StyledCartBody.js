@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const StyledBody = styled.main`
-  height: 65vh;
+  height: 73vh;
   max-height: calc(100vh - 18rem);
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: var(--light-gray);
   padding-top: 1rem;
+
+  /* @media (max-width: 400px) {
+    height: 66vh;
+  } */
 `;
 
 export const StyledTagLine = styled.article`

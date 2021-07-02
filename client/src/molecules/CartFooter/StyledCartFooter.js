@@ -5,8 +5,16 @@ export const StyledFooter = styled.footer`
   text-align: center;
   padding: 1.5rem;
 
+  @media (max-width: 900px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 0;
+  }
+
   > div {
-    padding-bottom: 1rem;
+    padding: 1rem 0;
   }
 
   button {

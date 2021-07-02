@@ -6,7 +6,7 @@ export const StyledEmptyBody = styled.main`
   gap: 1.2rem;
   align-content: center;
   justify-content: center;
-  height: 65vh;
+  height: 73vh;
   max-height: calc(100vh - 18rem);
 `;
 
