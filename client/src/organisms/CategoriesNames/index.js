@@ -4,8 +4,9 @@ import { getCategories } from "../../redux/actions";
 import CategorySidebar from "../../molecules/CategorySidebar";
 import CategoryDropDown from "../../molecules/CategoryDropDown";
 import { useDimensions } from "../../utils/useDimensions";
-const CategoriesNames = ({ currentCategory }) => {
+const CategoriesNames = () => {
   const { categories } = useSelector(({ categoriesData }) => categoriesData);
+  const currentCategory = useSelector(({ currentCategory }) => currentCategory);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!categories.length) dispatch(getCategories());
@@ -13,18 +14,8 @@ const CategoriesNames = ({ currentCategory }) => {
   const isPageWide = useDimensions("(min-width: 600px)");
   return (
     <>
-      {isPageWide && (
-        <CategorySidebar
-          currentCategory={currentCategory}
-          categories={categories}
-        />
-      )}
-      {!isPageWide && (
-        <CategoryDropDown
-          currentCategory={currentCategory}
-          categories={categories}
-        />
-      )}
+      {isPageWide && <CategorySidebar categories={categories} />}
+      {!isPageWide && <CategoryDropDown categories={categories} />}
     </>
   );
 };

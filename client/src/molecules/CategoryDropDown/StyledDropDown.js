@@ -18,6 +18,9 @@ const DropDownHeader = styled("div")`
   color: #fff;
   background-color: #b93153;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const DropDownList = styled("ul")`

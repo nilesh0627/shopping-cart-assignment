@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import Login from "../../organisms/Login";
 function index() {
   return (
@@ -8,4 +8,4 @@ function index() {
   );
 }
 
-export default memo(index);
+export default index;

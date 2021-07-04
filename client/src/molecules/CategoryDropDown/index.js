@@ -1,5 +1,6 @@
 import React, { memo, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   DropDownContainer,
   DropDownHeader,
@@ -7,12 +8,13 @@ import {
   Main,
   ListItem,
 } from "./StyledDropDown";
+import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 
-function CategoryDropDown({ currentCategory, categories }) {
+function CategoryDropDown({ categories }) {
   const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
-
+  const currentCategory = useSelector(({ currentCategory }) => currentCategory);
   const toggling = () => setIsOpen(!isOpen);
 
   const onOptionClicked = (categoryId, categoryName) => () => {
@@ -23,18 +25,20 @@ function CategoryDropDown({ currentCategory, categories }) {
   };
 
   useEffect(() => {
-    const filteredOption = categories?.data?.filter(
+    const filteredOption = categories?.data?.find(
       (item) => item.id === currentCategory
     );
-    if (filteredOption && filteredOption[0])
-      setSelectedOption(filteredOption[0]?.name);
-  }, [currentCategory]);
+    if (filteredOption) setSelectedOption(filteredOption?.name);
+
+    return () => setSelectedOption(null);
+  }, [categories?.data, currentCategory]);
 
   return (
     <Main>
       <DropDownContainer>
         <DropDownHeader onClick={toggling}>
-          {selectedOption || "Select a Category"}
+          {selectedOption || "Select a Category"}{" "}
+          {isOpen ? <AiFillCaretUp size={20} /> : <AiFillCaretDown size={20} />}
         </DropDownHeader>
         {isOpen && (
           <DropDownList>
