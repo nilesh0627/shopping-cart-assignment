@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../redux/actions";
 import CategorySidebar from "../../molecules/CategorySidebar";
@@ -6,7 +6,6 @@ import CategoryDropDown from "../../molecules/CategoryDropDown";
 import { useDimensions } from "../../utils/useDimensions";
 const CategoriesNames = () => {
   const { categories } = useSelector(({ categoriesData }) => categoriesData);
-  const currentCategory = useSelector(({ currentCategory }) => currentCategory);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!categories.length) dispatch(getCategories());
@@ -20,4 +19,4 @@ const CategoriesNames = () => {
   );
 };
 
-export default memo(CategoriesNames);
+export default CategoriesNames;

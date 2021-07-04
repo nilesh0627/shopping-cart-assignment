@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBanners } from "../../redux/actions";
 import Carousel from "../../molecules/Carousel";
@@ -16,4 +16,4 @@ function Banners() {
   return <WithLoader loading={loading} bannersData={bannersData} />;
 }
 
-export default memo(Banners);
+export default Banners;

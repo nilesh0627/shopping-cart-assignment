@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import Cart from "../../organisms/Cart";
 import { FaShoppingCart } from "react-icons/fa";
 import { StyledButton } from "./styledCartButton";
@@ -21,4 +21,4 @@ function CartButton({ cart }) {
   );
 }
 
-export default CartButton;
+export default memo(CartButton);

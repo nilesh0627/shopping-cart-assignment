@@ -1,11 +1,7 @@
-import React, { memo } from "react";
-import Register from "../../organisms/Register";
+import React from "react";
+import Register from "../../molecules/Register";
 function index() {
-  return (
-    <>
-      <Register />
-    </>
-  );
+  return <Register />;
 }
 
-export default memo(index);
+export default index;

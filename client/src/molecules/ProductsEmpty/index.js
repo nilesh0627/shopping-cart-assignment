@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { StyledMain } from "./styledProductsEmpty";
 const index = () => {
   return (
@@ -8,4 +8,4 @@ const index = () => {
   );
 };
 
-export default memo(index);
+export default index;

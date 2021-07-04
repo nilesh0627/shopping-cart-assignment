@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import Button from "../../atoms/Button";
 import { EmptyFooter } from "../CartEmpty";
 import { StyledFooter } from "./StyledCartFooter";
@@ -20,4 +20,4 @@ function index({ cart, checkout, amount }) {
   );
 }
 
-export default index;
+export default memo(index);

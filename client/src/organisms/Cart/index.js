@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { reduce } from "../../utils/reduce";
@@ -20,4 +20,4 @@ function CartItems() {
   return <Cart cart={cart} amount={amount} checkout={checkout} />;
 }
 
-export default memo(CartItems);
+export default CartItems;

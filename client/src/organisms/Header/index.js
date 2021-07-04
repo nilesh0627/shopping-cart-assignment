@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Header from "../../molecules/Header";
 function HeaderContainer() {
@@ -6,4 +6,4 @@ function HeaderContainer() {
   return <Header cart={cart} />;
 }
 
-export default memo(HeaderContainer);
+export default HeaderContainer;

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CartButton from "../CartButton";
 import { useCart } from "../../utils/useCart";
 function Header({ cart }) {
-  const { closeCart, openCart } = useCart();
+  const { closeCart } = useCart();
   return (
     <HeaderStyles className="shadow">
       <div className="container">

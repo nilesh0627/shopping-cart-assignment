@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import Input from "../../atoms/Input";
 import AuthenticationLayout from "../../templates/AuthenticationLayout";
 import ErrorMessage from "../../atoms/ErrorMessage";
@@ -54,15 +54,4 @@ function Login() {
   );
 }
 
-export default memo(Login);
-
-// {
-//   errors.password && (
-//     <ErrorMessage
-//       field="Password"
-//       type={errors.password.type}
-//       minLength={passwordValidation.minLength}
-//       maxLength={passwordValidation.maxLength}
-//     />
-//   );
-// }
+export default Login;

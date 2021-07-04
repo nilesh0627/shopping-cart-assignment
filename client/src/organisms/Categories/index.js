@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../redux/actions";
 import CategoriesList from "../../molecules/CategoriesList";
@@ -8,7 +8,7 @@ const WithLoader = withLoader(CategoriesList);
 
 function Categories() {
   const dispatch = useDispatch();
-  const { loading, error, categories } = useSelector(
+  const { loading, categories } = useSelector(
     ({ categoriesData }) => categoriesData
   );
   useEffect(() => {
@@ -18,4 +18,4 @@ function Categories() {
   return <WithLoader loading={loading} categories={categories} />;
 }
 
-export default memo(Categories);
+export default Categories;

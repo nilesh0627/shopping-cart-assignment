@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { StyledHeader, Close } from "./StyledCartHeader";
 import { CgClose } from "react-icons/cg";
 import { useCart } from "../../utils/useCart";
@@ -17,4 +17,4 @@ function CartHeader({ cart }) {
   );
 }
 
-export default CartHeader;
+export default memo(CartHeader);
