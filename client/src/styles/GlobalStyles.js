@@ -70,8 +70,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .fade-shadow{
     width: 100%;
-  position: relative;
-  &::after {
+    position: relative;
+    &::after {
     content: "";
     display: block;
     position: absolute;
