@@ -45,23 +45,6 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: var(---black);
   }
-
-  ::-webkit-scrollbar {
-  width: 0.4rem;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--white); 
-}
- 
-::-webkit-scrollbar-thumb {
-  background: var(--dark-gray); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--black); 
-}
-
   .shadow{
   -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.3);
   -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.3);
