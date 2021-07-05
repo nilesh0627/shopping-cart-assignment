@@ -6,10 +6,10 @@ function CartHeader({ cart }) {
   const { closeCart } = useCart();
   return (
     <StyledHeader>
-      <div>
-        <strong>My Cart </strong>
-        {cart.length ? <span>({cart.length} items)</span> : ""}
-      </div>
+      <article>
+        <h2>My Cart </h2>
+        <div>{cart.length ? <span>({cart.length} items)</span> : ""}</div>
+      </article>
       <Close onClick={closeCart}>
         <CgClose size={18} />
       </Close>

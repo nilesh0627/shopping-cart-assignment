@@ -14,12 +14,12 @@ const Modal = styled.div`
   @media (max-width: 900px) {
     padding-top: 0;
     margin-top: 6.6rem;
-    background-color: var(--white);
+    background-color: var(--light-gray);
   }
 `;
 
 const ModalContent = styled.div`
-  background-color: var(--white);
+  background-color: var(--light-gray);
   color: var(--black);
   margin: auto;
   margin-left: 45%;

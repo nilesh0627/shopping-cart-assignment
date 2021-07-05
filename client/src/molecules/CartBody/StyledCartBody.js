@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledBody = styled.main`
-  /* height: 73vh; */
+  min-height: 70vh;
   max-height: calc(100vh - 18rem);
   overflow-y: scroll;
   background-color: var(--light-gray);
@@ -14,6 +14,10 @@ export const StyledTagLine = styled.article`
   gap: 1rem;
   background-color: var(--white);
   padding: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
+
+  @media (max-width: 900px) {
+    margin-bottom: 5rem;
+  }
 `;

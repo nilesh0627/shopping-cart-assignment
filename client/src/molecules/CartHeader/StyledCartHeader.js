@@ -7,12 +7,24 @@ const StyledHeader = styled.header`
   background-color: var(--black);
   padding: 1.4rem;
   position: sticky;
-  div {
+  article {
+    display: flex;
+    align-items: center;
     color: var(--white);
+    h2 {
+      padding-right: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      color: var(--black);
+    }
+  }
+
+  @media (max-width: 900px) {
+    background-color: var(--white);
   }
 `;
 const Close = styled.span`
-  color: var(--light-gray);
+  color: var(--white);
   text-align: right;
 
   :hover,
@@ -20,6 +32,10 @@ const Close = styled.span`
     color: var(--primary-color);
     text-decoration: none;
     cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    color: var(--black);
   }
 `;
 
