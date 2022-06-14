@@ -8,7 +8,7 @@ export function getCategories() {
   return async (dispatch) => {
     dispatch(getCategoriesRequest());
     try {
-      const categories = await Axios.get(`/categories`);
+      const categories = await Axios.get(`/ApnaBaazarJSONServer/categories`);
       dispatch(getCategoriesSuccess(categories));
     } catch (e) {
       dispatch(getCategoriesFail());

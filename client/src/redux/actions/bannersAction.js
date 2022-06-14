@@ -8,7 +8,7 @@ export function getBanners() {
   return async (dispatch) => {
     dispatch(getBannersRequest());
     try {
-      const bannerData = await Axios.get(`/banners`);
+      const bannerData = await Axios.get(`/ApnaBaazarJSONServer/banners`);
       dispatch(getBannersSuccess(bannerData));
     } catch (e) {
       dispatch(getBannersFail());

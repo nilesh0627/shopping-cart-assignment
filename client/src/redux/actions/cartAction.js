@@ -1,4 +1,3 @@
-import { Axios } from "../config";
 import {
   ADD_TO_CART_REQUEST,
   ADD_TO_CART_SUCCESS,

@@ -9,7 +9,7 @@ export const productsAction = () => {
   return async (dispatch) => {
     dispatch(productsRequest());
     try {
-      const productsData = await Axios.get(`/products`);
+      const productsData = await Axios.get(`/ProductsJSONServer/products`);
       dispatch(productsSuccess(productsData));
     } catch (e) {
       dispatch(productsFail());
